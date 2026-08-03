@@ -1,0 +1,24 @@
+# Build outputs
+a.out
+*.o
+*.ko
+*.mod
+*.mod.c
+*.order
+*.symvers
+
+# Editor files
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+
+# Logs
+automation/logs/
+
+# VS Code
+.vscode/
+
+# Temporary files
+4913
