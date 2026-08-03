@@ -5,7 +5,7 @@ commit_repo()
     echo
     echo "========== GIT MODULE =========="
 
-    cd "$WATCH_DIR" || {
+    cd "$WATCH_ROOT" || {
         echo "ERROR: Cannot change directory."
         return 1
     }

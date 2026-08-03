@@ -1,7 +1,14 @@
 #!/bin/bash
 
 # Root directory to monitor
-WATCH_DIR="$HOME/learning"
+
+WATCH_ROOT="$HOME/learning"
+
+WATCH_DIRS=(
+    "$WATCH_ROOT/C"
+    "$WATCH_ROOT/KERNEL"
+    "$WATCH_ROOT/LSP"
+)
 
 # Debounce timeout (seconds)
 TIMEOUT=30

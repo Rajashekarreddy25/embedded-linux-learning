@@ -60,5 +60,5 @@ done < <(
     -e moved_to \
     -e moved_from \
     --format '%w|%e|%f' \
-    "$WATCH_DIR"
+    "${WATCH_DIRS[@]}"
 )

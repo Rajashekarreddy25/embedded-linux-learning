@@ -1,7 +1,11 @@
 log_message()
 {
     local message="$1"
+    local timestamp
 
-    echo "$message"
-    echo "$message" >> "$LOG_FILE"
+    timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+
+    echo "[$timestamp] $message"
+
+    echo "[$timestamp] $message" >> "$LOG_FILE"
 }
