@@ -2,6 +2,9 @@
 
 # Load configuration
 source "$(dirname "$0")/config.sh"
+source "$(dirname "$0")/scripts/timer.sh"
+source "$(dirname "$0")/scripts/logger.sh"
+source "$(dirname "$0")/scripts/git_ops.sh"
 
 # PID of the currently running debounce timer
 TIMER_PID=""
@@ -10,14 +13,6 @@ TIMER_PID=""
 DIRTY=0
 
 
-log_message()
-{
-    local message="$1"
-
-    echo "$message"
-
-    echo "$message" >> "$LOG_FILE"
-}
 
 log_message "Watcher Started"
 
@@ -31,56 +26,6 @@ is_ignored()
     else
         return 1
     fi
-}
-
-mark_dirty()
-{
-    if [ "$DIRTY" -eq 0 ]
-    then
-        DIRTY=1
-        echo "Repository State : DIRTY"
-    fi
-}
-
-commit_repo()
-{
-    echo
-    echo "=================================="
-    echo "COMMIT SHOULD HAPPEN NOW"
-    echo "=================================="
-
-    DIRTY=0
-
-    echo "Repository State : CLEAN"
-}
-
-timer_expired()
-{
-    if [ "$DIRTY" -eq 1 ]
-    then
-        commit_repo
-    fi
-}
-
-
-start_timer()
-{
-    # Kill previous timer if it exists
-    if [ -n "$TIMER_PID" ]
-    then
-        kill "$TIMER_PID" 2>/dev/null
-	echo "old timer stopped."
-    fi
-
-    (
-        sleep "$TIMEOUT"
-        timer_expired
-    ) &
-
-    TIMER_PID=$!
-
-
-    echo "New timer started (PID : $TIMER_PID)"
 }
 
 while IFS='|' read -r path event file

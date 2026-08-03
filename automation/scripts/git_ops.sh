@@ -6,40 +6,53 @@ commit_repo()
     echo "========== GIT MODULE =========="
 
     cd "$WATCH_DIR" || {
-        echo "ERROR: Cannot enter repository."
+        echo "ERROR: Cannot change directory."
         return 1
     }
 
-    echo "[1/4] Staging changes..."
+    echo "[1] Current directory:"
+    pwd
+
+    echo "[2] Running git add ."
     git add .
+
+    echo "[3] Checking staged changes..."
 
     if git diff --cached --quiet
     then
-        echo "No new changes detected."
+        echo "Nothing staged."
 
         DIRTY=0
         return 0
     fi
 
+    echo "[4] Creating commit..."
+
     COMMIT_MSG="Auto Commit - $(date '+%Y-%m-%d %H:%M:%S')"
 
-    echo "[2/4] Creating commit..."
+    git commit -m "$COMMIT_MSG"
 
-    if ! git commit -m "$COMMIT_MSG"
+    if [ $? -ne 0 ]
     then
         echo "Commit failed."
         return 1
     fi
 
-    echo "[3/4] Pushing to GitHub..."
+    CURRENT_BRANCH=$(git branch --show-current)
 
-    if ! git push origin main
+    echo "[5] Branch : $CURRENT_BRANCH"
+
+    echo "[6] Running git push..."
+
+    git push origin "$CURRENT_BRANCH"
+
+    if [ $? -ne 0 ]
     then
         echo "Push failed."
         return 1
     fi
 
-    echo "[4/4] Done."
+    echo "[7] Push successful."
 
     DIRTY=0
 
