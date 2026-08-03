@@ -5,6 +5,17 @@ source "$(dirname "$0")/config.sh"
 source "$(dirname "$0")/scripts/timer.sh"
 source "$(dirname "$0")/scripts/logger.sh"
 source "$(dirname "$0")/scripts/git_ops.sh"
+source "$(dirname "$0")/scripts/lock.sh"
+
+
+cleanup()
+{
+    release_lock
+}
+
+trap cleanup EXIT INT TERM
+
+
 
 # PID of the currently running debounce timer
 TIMER_PID=""
@@ -15,6 +26,8 @@ DIRTY=0
 
 
 log_message "Watcher Started"
+
+acquire_lock
 
 is_ignored()
 {
@@ -50,7 +63,7 @@ do
 
     start_timer
 
-    echo "Repository State : DIRTY"
+#    echo "Repository State : DIRTY"
 
 done < <(
     inotifywait -m -r \
