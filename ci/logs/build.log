@@ -1,0 +1,10 @@
+[2026-08-04 11:02:07] [INFO]  Searching for Makefiles...
+[2026-08-04 11:02:07] [INFO]  ----------------------------------------
+[2026-08-04 11:02:07] [INFO]  Project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator
+[2026-08-04 11:02:07] [INFO]  make clean completed
+[2026-08-04 11:02:07] [PASS]  Build Successful
+[2026-08-04 11:02:07] [INFO]  ----------------------------------------
+[2026-08-04 11:02:07] [INFO]  Project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator1
+[2026-08-04 11:02:07] [INFO]  make clean completed
+[2026-08-04 11:02:07] [ERROR] Build Failed
+[2026-08-04 11:02:07] [INFO]  Finished building Makefile projects.
