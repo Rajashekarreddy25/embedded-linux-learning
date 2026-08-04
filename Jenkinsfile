@@ -136,7 +136,7 @@ pipeline {
 }
 */
 
-
+/*
 
 pipeline {
 
@@ -266,6 +266,153 @@ pipeline {
             echo "===================================="
             echo "BUILD ABORTED"
             echo "===================================="
+        }
+    }
+}
+
+*/
+
+
+
+
+pipeline {
+
+    agent any
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+
+        buildDiscarder(logRotator(
+            numToKeepStr: '20',
+            artifactNumToKeepStr: '10'
+        ))
+    }
+
+    stages {
+
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Information') {
+            steps {
+                sh '''
+                    echo "=========================================="
+                    echo "Embedded Linux CI Pipeline"
+                    echo "=========================================="
+                    echo "Job Name      : $JOB_NAME"
+                    echo "Build Number  : $BUILD_NUMBER"
+                    echo "Workspace     : $WORKSPACE"
+                    echo "Build URL     : $BUILD_URL"
+                    echo
+
+                    echo "Git Commit"
+                    git log -1 --oneline
+
+                    echo
+                    echo "Compiler"
+                    gcc --version | head -1
+
+                    echo "=========================================="
+                '''
+            }
+        }
+
+        stage('Build Makefile Projects') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    sh '''
+                        chmod +x ci/build_makefiles.sh
+                        ./ci/build_makefiles.sh
+                    '''
+                }
+            }
+        }
+
+        stage('Build Standalone Programs') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    sh '''
+                        chmod +x ci/build_standalone.sh
+                        ./ci/build_standalone.sh
+                    '''
+                }
+            }
+        }
+
+        stage('Generate HTML Report') {
+            steps {
+                sh '''
+                    chmod +x ci/generate_report.sh
+                    ./ci/generate_report.sh
+                '''
+            }
+        }
+    }
+
+    post {
+
+        always {
+
+            archiveArtifacts(
+                artifacts: 'ci/logs/*, ci/reports/*, ci/build/**',
+                fingerprint: true
+            )
+
+            publishHTML(target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'ci/reports',
+                reportFiles: 'build_report.html',
+                reportName: 'Embedded Linux Build Report'
+            ])
+
+            script {
+                def commit = sh(
+                    script: 'git rev-parse --short HEAD',
+                    returnStdout: true
+                ).trim()
+
+                currentBuild.description = "#${env.BUILD_NUMBER} | ${commit}"
+            }
+        }
+
+        success {
+            echo ""
+            echo "======================================"
+            echo "BUILD SUCCESS"
+            echo "======================================"
+        }
+
+        failure {
+            echo ""
+            echo "======================================"
+            echo "BUILD FAILED"
+            echo "======================================"
+        }
+
+        unstable {
+            echo ""
+            echo "======================================"
+            echo "BUILD UNSTABLE"
+            echo "======================================"
+        }
+
+        aborted {
+            echo ""
+            echo "======================================"
+            echo "BUILD ABORTED"
+            echo "======================================"
         }
     }
 }
