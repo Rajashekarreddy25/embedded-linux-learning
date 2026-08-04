@@ -1,10 +1,14 @@
-[2026-08-04 11:02:07] [INFO]  Searching for Makefiles...
-[2026-08-04 11:02:07] [INFO]  ----------------------------------------
-[2026-08-04 11:02:07] [INFO]  Project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator
-[2026-08-04 11:02:07] [INFO]  make clean completed
-[2026-08-04 11:02:07] [PASS]  Build Successful
-[2026-08-04 11:02:07] [INFO]  ----------------------------------------
-[2026-08-04 11:02:07] [INFO]  Project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator1
-[2026-08-04 11:02:07] [INFO]  make clean completed
-[2026-08-04 11:02:07] [ERROR] Build Failed
-[2026-08-04 11:02:07] [INFO]  Finished building Makefile projects.
+[2026-08-04 11:48:47] [INFO]  Searching for Makefiles...
+[2026-08-04 11:48:47] [INFO]  ----------------------------------------
+[2026-08-04 11:48:47] [INFO]  Project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator
+[2026-08-04 11:48:47] [INFO]  make clean completed
+[2026-08-04 11:48:48] [PASS]  Build Successful
+[2026-08-04 11:48:48] [INFO]  ----------------------------------------
+[2026-08-04 11:48:48] [INFO]  Project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator1
+[2026-08-04 11:48:48] [INFO]  make clean completed
+[2026-08-04 11:48:48] [ERROR] Build Failed
+[2026-08-04 11:48:48] [INFO]  ----------------------------------------
+[2026-08-04 11:48:48] [INFO]  Total Projects : 2
+[2026-08-04 11:48:48] [PASS]  Successful     : 1
+[2026-08-04 11:48:48] [ERROR] Failed         : 1
+[2026-08-04 11:48:48] [INFO]  Finished building Makefile projects.

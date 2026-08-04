@@ -6,11 +6,17 @@ clear_log
 
 ROOT_DIR="$HOME/learning"
 
+TOTAL=0
+PASS=0
+FAIL=0
+
 log_info "Searching for Makefiles..."
 
-find "$ROOT_DIR" -type f -name "Makefile" | while read -r makefile
+while read -r makefile
 do
     PROJECT_DIR=$(dirname "$makefile")
+
+    TOTAL=$((TOTAL + 1))
 
     log_info "----------------------------------------"
     log_info "Project : $PROJECT_DIR"
@@ -26,11 +32,18 @@ do
 
     if make
     then
+        PASS=$((PASS + 1))
         log_success "Build Successful"
     else
+        FAIL=$((FAIL + 1))
         log_error "Build Failed"
     fi
 
-done
+done < <(find "$ROOT_DIR" -type f -name "Makefile")
+
+log_info "----------------------------------------"
+log_info "Total Projects : $TOTAL"
+log_success "Successful     : $PASS"
+log_error "Failed         : $FAIL"
 
 log_info "Finished building Makefile projects."
