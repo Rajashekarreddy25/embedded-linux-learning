@@ -47,3 +47,12 @@ log_success "Successful     : $PASS"
 log_error "Failed         : $FAIL"
 
 log_info "Finished building Makefile projects."
+
+
+
+if [ "$FAIL" -gt 0 ]
+then
+    exit 1
+else
+    exit 0
+fi
