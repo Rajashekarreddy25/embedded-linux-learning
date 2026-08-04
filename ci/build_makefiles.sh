@@ -4,7 +4,10 @@ source "$(dirname "$0")/lib/logger.sh"
 
 clear_log
 
-ROOT_DIR="$HOME/learning"
+#ROOT_DIR="$HOME/learning"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
 
 TOTAL=0
 PASS=0

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Embedded Linux CI Report</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+padding:30px;
+}
+
+table{
+border-collapse:collapse;
+width:60%;
+}
+
+th,td{
+border:1px solid black;
+padding:10px;
+text-align:left;
+}
+
+.pass{
+color:green;
+font-weight:bold;
+}
+
+.fail{
+color:red;
+font-weight:bold;
+}
+
+.info{
+color:blue;
+font-weight:bold;
+}
+
+pre{
+background:white;
+padding:15px;
+border:1px solid #ddd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Embedded Linux CI Build Report</h1>
+
+<p><b>Date :</b> Tue Aug  4 12:38:51 PM IST 2026</p>
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Count</th>
+</tr>
+
+<tr>
+<td class="pass">PASS</td>
+<td>25</td>
+</tr>
+
+<tr>
+<td class="fail">FAIL</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td class="info">INFO</td>
+<td>44</td>
+</tr>
+
+</table>
+
+<h2>Build Log</h2>
+
+<pre>
+
+[2026-08-04 11:58:26] [INFO]  Searching for Makefiles...
+[2026-08-04 11:58:26] [INFO]  ----------------------------------------
+[2026-08-04 11:58:26] [INFO]  Project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator
+[2026-08-04 11:58:26] [INFO]  make clean completed
+[2026-08-04 11:58:26] [PASS]  Build Successful
+[2026-08-04 11:58:26] [INFO]  ----------------------------------------
+[2026-08-04 11:58:26] [INFO]  Project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator1
+[2026-08-04 11:58:26] [INFO]  make clean completed
+[2026-08-04 11:58:26] [ERROR] Build Failed
+[2026-08-04 11:58:26] [INFO]  ----------------------------------------
+[2026-08-04 11:58:26] [INFO]  Total Projects : 2
+[2026-08-04 11:58:26] [PASS]  Successful     : 1
+[2026-08-04 11:58:26] [ERROR] Failed         : 1
+[2026-08-04 11:58:26] [INFO]  Finished building Makefile projects.
+[2026-08-04 11:58:44] [INFO]  Searching for standalone C files...
+[2026-08-04 11:58:44] [INFO]  Compiling : /home/rajashekar-reddy/learning/LSP/pthreads/DeadLock.c
+[2026-08-04 11:58:44] [PASS]  Compiled : DeadLock
+[2026-08-04 11:58:44] [INFO]  Compiling : /home/rajashekar-reddy/learning/LSP/pthreads/semaphore.c
+[2026-08-04 11:58:44] [PASS]  Compiled : semaphore
+[2026-08-04 11:58:44] [INFO]  Compiling : /home/rajashekar-reddy/learning/LSP/pthreads/cond_variables1.c
+[2026-08-04 11:58:44] [PASS]  Compiled : cond_variables1
+[2026-08-04 11:58:44] [INFO]  Compiling : /home/rajashekar-reddy/learning/LSP/pthreads/spin_lock.c
+[2026-08-04 11:58:44] [PASS]  Compiled : spin_lock
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/LSP/pthreads/cond_variables.c
+[2026-08-04 11:58:45] [PASS]  Compiled : cond_variables
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/LSP/pthreads/mutex.c
+[2026-08-04 11:58:45] [PASS]  Compiled : mutex
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/strings/rotate_string.c
+[2026-08-04 11:58:45] [PASS]  Compiled : rotate_string
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/strings/string_compression.c
+[2026-08-04 11:58:45] [PASS]  Compiled : string_compression
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/trees/binary_search_tree.c
+[2026-08-04 11:58:45] [PASS]  Compiled : binary_search_tree
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/recurrsion/reverse_exam.c
+[2026-08-04 11:58:45] [PASS]  Compiled : reverse_exam
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/recurrsion/factorial.c
+[2026-08-04 11:58:45] [PASS]  Compiled : factorial
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/test1.c
+[2026-08-04 11:58:45] [ERROR] Failed : /home/rajashekar-reddy/learning/C/test1.c
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/systemd_test.c
+[2026-08-04 11:58:45] [ERROR] Failed : /home/rajashekar-reddy/learning/C/systemd_test.c
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/2Darrays/leader_ele.c
+[2026-08-04 11:58:45] [PASS]  Compiled : leader_ele
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/2Darrays/rotate90.c
+[2026-08-04 11:58:45] [PASS]  Compiled : rotate90
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/2Darrays/rotate90_1.c
+[2026-08-04 11:58:45] [PASS]  Compiled : rotate90_1
+[2026-08-04 11:58:45] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/linkedlist/merge_2_sorted_ll.c
+[2026-08-04 11:58:46] [PASS]  Compiled : merge_2_sorted_ll
+[2026-08-04 11:58:46] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/linkedlist/ll.c
+[2026-08-04 11:58:46] [PASS]  Compiled : ll
+[2026-08-04 11:58:46] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/linkedlist/insertion_ll.c
+[2026-08-04 11:58:46] [PASS]  Compiled : insertion_ll
+[2026-08-04 11:58:46] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/linkedlist/merge_list.c
+[2026-08-04 11:58:46] [PASS]  Compiled : merge_list
+[2026-08-04 11:58:46] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/arrays/arr_rotation.c
+[2026-08-04 11:58:46] [PASS]  Compiled : arr_rotation
+[2026-08-04 11:58:46] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/arrays/binary_search.c
+[2026-08-04 11:58:46] [PASS]  Compiled : binary_search
+[2026-08-04 11:58:46] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/arrays/prod_of_ele_except_curr.c
+[2026-08-04 11:58:46] [PASS]  Compiled : prod_of_ele_except_curr
+[2026-08-04 11:58:46] [INFO]  Compiling : /home/rajashekar-reddy/learning/C/basic_programs/reverse_exam.c
+[2026-08-04 11:58:46] [PASS]  Compiled : reverse_exam
+[2026-08-04 11:58:46] [INFO]  Skipping Makefile project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator/add.c
+[2026-08-04 11:58:46] [INFO]  Skipping Makefile project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator/main.c
+[2026-08-04 11:58:46] [INFO]  Skipping Makefile project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator/sub.c
+[2026-08-04 11:58:46] [INFO]  Skipping Makefile project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator1/src/add.c
+[2026-08-04 11:58:46] [INFO]  Skipping Makefile project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator1/src/main.c
+[2026-08-04 11:58:46] [INFO]  Skipping Makefile project : /home/rajashekar-reddy/learning/KERNEL/MakeUtility/makeUtility1/calculator1/src/sub.c
+[2026-08-04 11:58:46] [INFO]  ----------------------------------------
+[2026-08-04 11:58:46] [INFO]  Standalone Files : 24
+[2026-08-04 11:58:46] [INFO]  Skipped          : 6
+[2026-08-04 11:58:46] [PASS]  Successful       : 22
+[2026-08-04 11:58:46] [ERROR] Failed           : 2
+
+</pre>
+
+</body>
+
+</html>
+

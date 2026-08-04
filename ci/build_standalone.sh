@@ -3,8 +3,17 @@
 source "$(dirname "$0")/lib/logger.sh"
 source "$(dirname "$0")/lib/utils.sh"
 
-ROOT_DIR="$HOME/learning"
+#ROOT_DIR="$HOME/learning"
+#BUILD_DIR="$ROOT_DIR/ci/build"
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+
 BUILD_DIR="$ROOT_DIR/ci/build"
+
+mkdir -p "$BUILD_DIR"
+
 
 mkdir -p "$BUILD_DIR"
 
@@ -17,7 +26,7 @@ log_info "Searching for standalone C files..."
 
 while read -r file
 do
-    DIR=$(dirname "$file")
+    DIR="$(dirname "$file")"
 
     if has_makefile "$DIR"
     then

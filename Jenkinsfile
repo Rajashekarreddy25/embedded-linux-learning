@@ -10,6 +10,21 @@ pipeline {
                     url: 'git@github.com:Rajashekarreddy25/embedded-linux-learning.git'
             }
         }
+	stage('Debug') {
+ 	   steps {
+       		 sh '''
+           		 pwd
+           		 ls -R
+           		 git rev-parse HEAD
+
+          		 echo "----- logger.sh -----"
+           		 cat ci/lib/logger.sh
+
+           		 echo "----- build_makefiles.sh -----"
+           		 cat ci/build_makefiles.sh
+       		 '''
+   		 }
+	}
 
         stage('Build Makefile Projects') {
             steps {

@@ -1,6 +1,23 @@
 #!/bin/bash
 
-LOG_FILE="$HOME/learning/ci/logs/build.log"
+#!/bin/bash
+
+echo "=============================="
+echo "LOGGER LOADED"
+echo "SCRIPT_DIR=$SCRIPT_DIR"
+echo "BASH_SOURCE=${BASH_SOURCE[0]}"
+echo "PWD=$(pwd)"
+echo "=============================="
+
+
+#LOG_FILE="$HOME/learning/ci/logs/build.log"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CI_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+mkdir -p "$CI_DIR/logs"
+
+LOG_FILE="$CI_DIR/logs/build.log"
+
 
 log_info()
 {
@@ -32,4 +49,5 @@ log_success()
 clear_log()
 {
     > "$LOG_FILE"
+    echo "LOG_FILE=$LOG_FILE"
 }
