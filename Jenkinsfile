@@ -1,3 +1,4 @@
+/*
 pipeline {
 
     agent any
@@ -77,4 +78,59 @@ pipeline {
     }
 }
 
+}
+*/
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'git@github.com:Rajashekarreddy25/embedded-linux-learning.git'
+            }
+        }
+
+        stage('Build Makefile Projects') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'chmod +x ci/build_makefiles.sh'
+                    sh './ci/build_makefiles.sh'
+                }
+            }
+        }
+
+        stage('Build Standalone Programs') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'chmod +x ci/build_standalone.sh'
+                    sh './ci/build_standalone.sh'
+                }
+            }
+        }
+
+        stage('Generate Report') {
+            steps {
+                sh 'chmod +x ci/generate_report.sh'
+                sh './ci/generate_report.sh'
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'ci/logs/*, ci/reports/*', fingerprint: true
+
+            publishHTML(target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'ci/reports',
+                reportFiles: 'build_report.html',
+                reportName: 'Embedded Linux CI Report'
+            ])
+        }
+    }
 }
