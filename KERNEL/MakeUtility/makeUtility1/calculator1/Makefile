@@ -4,24 +4,19 @@
 #clean : 
 #	rm -rf app
 
-
 CC = gcc
 
+CFLAGS = -Iinc
 
-OBJ = obj/add.o obj/sub.o obj/main.o
+SRC = src/main.c src/add.c src/sub.c
+OBJ = obj/main.o obj/add.o obj/sub.o
 
-app : $(OBJ)
-	$(CC) main.o add.o sub.o -o app
+app: $(OBJ)
+	$(CC) $(OBJ) -o app
 
-main.o : main.c add.h sub.h
-	$(CC) -c main.c
+obj/%.o: src/%.c
+	mkdir -p obj
+	$(CC) $(CFLAGS) -c $< -o $@
 
-add.o : add.c add.h
-	$(CC) -c add.c
-
-sub.o : sub.c sub.h
-	$(CC) -c sub.c
-
-
-clean :
-	rm -f *.o app
+clean:
+	rm -rf obj app
