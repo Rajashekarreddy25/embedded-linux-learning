@@ -80,7 +80,7 @@ pipeline {
 
 }
 */
-
+/*
 pipeline {
     agent any
 
@@ -131,6 +131,141 @@ pipeline {
                 reportFiles: 'build_report.html',
                 reportName: 'Embedded Linux CI Report'
             ])
+        }
+    }
+}
+*/
+
+
+
+pipeline {
+
+    agent any
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+
+        buildDiscarder(logRotator(
+            numToKeepStr: '20',
+            artifactNumToKeepStr: '10'
+        ))
+    }
+
+    stages {
+
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Information') {
+            steps {
+                sh '''
+                    echo "======================================="
+                    echo "Job Name      : $JOB_NAME"
+                    echo "Build Number  : $BUILD_NUMBER"
+                    echo "Workspace     : $WORKSPACE"
+                    echo "Build User    : $BUILD_USER"
+                    echo "Build URL     : $BUILD_URL"
+                    echo "======================================="
+
+                    echo
+                    echo "Git Commit"
+                    git log -1 --oneline
+
+                    echo
+                    echo "Compiler"
+                    gcc --version | head -1
+
+                    echo "======================================="
+                '''
+            }
+        }
+
+        stage('Build Makefile Projects') {
+            steps {
+                sh '''
+                    chmod +x ci/build_makefiles.sh
+                    ./ci/build_makefiles.sh
+                '''
+            }
+        }
+
+        stage('Build Standalone Programs') {
+            steps {
+                sh '''
+                    chmod +x ci/build_standalone.sh
+                    ./ci/build_standalone.sh
+                '''
+            }
+        }
+
+        stage('Generate HTML Report') {
+            steps {
+                sh '''
+                    chmod +x ci/generate_report.sh
+                    ./ci/generate_report.sh
+                '''
+            }
+        }
+
+    }
+
+    post {
+
+        always {
+
+            archiveArtifacts artifacts: '''
+                ci/logs/*
+                ci/reports/*
+                ci/build/**
+            ''', fingerprint: true
+
+            publishHTML(target: [
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'ci/reports',
+                reportFiles: 'build_report.html',
+                reportName: 'Embedded Linux Build Report'
+            ])
+
+            script {
+                currentBuild.description =
+                    "#${env.BUILD_NUMBER} - ${env.GIT_COMMIT?.take(7) ?: 'N/A'}"
+            }
+        }
+
+        success {
+            echo "===================================="
+            echo "BUILD SUCCESS"
+            echo "===================================="
+        }
+
+        failure {
+            echo "===================================="
+            echo "BUILD FAILED"
+            echo "===================================="
+        }
+
+        unstable {
+            echo "===================================="
+            echo "BUILD UNSTABLE"
+            echo "===================================="
+        }
+
+        aborted {
+            echo "===================================="
+            echo "BUILD ABORTED"
+            echo "===================================="
         }
     }
 }
