@@ -28,7 +28,7 @@ int main(){
 	printf("the string after reverse : %s\n",str1);
 	start = 0;
 	end = 0;
-	while(str1[i] != ' '){
+	while(str1[end] != ' '){
 	end++;
 	
 	}
