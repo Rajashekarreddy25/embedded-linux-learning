@@ -13,7 +13,7 @@ while (start < end){
 int main(){
 	char str1[20];
        printf("enter a string:");
-       scanf("%s",str1);
+       scanf("%^[\n]",str1);
 	int n = strlen(str1);
         int start = 0;
        int end = n-1;
