@@ -15,27 +15,21 @@ int main(){
 	int n = strlen(str1);
         int start = 0;
        int end = n-1;
-/*	
-       while (start < end){
-	 char temp = str1[start];
- 	str1[start] = str1[end];
-	str1[end] = temp;
-	start++;
-	end--;
-	}
-	*/
+       
        reverse(str1,start,end);
-	printf("the string after reverse : %s\n",str1);
+	printf("the string after 1st reverse : %s\n",str1);
 	start = 0;
 	end = 0;
 	while(str1[end] !='\0'){
-		while(str1[end] != ' '){
+		while(str1[end] != ' ' && str1[end] != '\0'){
 			end++;
-		
 		}
 		reverse(str1,start,end-1);
+		if (str1[end] == '\0')
+			break;
+
 		start = end+1;
-		end = end+1;
+		end++;
 	}
 
 	printf("end afrter reverse: %s ",str1);
