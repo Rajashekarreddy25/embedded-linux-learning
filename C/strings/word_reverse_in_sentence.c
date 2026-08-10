@@ -12,7 +12,6 @@ while (start < end){
 }
 int main(){
 	char str1[20];
-       //	= "Hello World!";
        printf("enter a string:");
        scanf("%s",str1);
 	int n = strlen(str1);
@@ -20,7 +19,8 @@ int main(){
        int end = n-1;
        
        reverse(str1,start,end);
-	printf("the string after 1st reverse : %s\n",str1);
+	printf("the string after 1st reverse : %s %d\n",str1,end);
+
 	start = 0;
 	end = 0;
 
