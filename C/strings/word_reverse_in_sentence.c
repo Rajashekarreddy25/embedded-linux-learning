@@ -11,7 +11,7 @@ while (start < end){
 
 }
 int main(){
-	char str1[20];
+	char str1[50];
        printf("enter a string:");
        scanf("%[^\\n]",str1);
 	int n = strlen(str1);
