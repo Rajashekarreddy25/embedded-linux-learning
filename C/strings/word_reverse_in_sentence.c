@@ -28,10 +28,16 @@ int main(){
 	printf("the string after reverse : %s\n",str1);
 	start = 0;
 	end = 0;
-	while(str1[end] != ' '){
-	end++;
-	
+	while(str1[end] !='\0'){
+		while(str1[end] != ' '){
+			end++;
+		
+		}
+		reverse(str1,start,end-1);
+		start = end+1;
+		end = end+1;
 	}
-	printf("end afrter reverse: %d ",end);
+
+	printf("end afrter reverse: %s ",str1);
 	return 0;
 }
