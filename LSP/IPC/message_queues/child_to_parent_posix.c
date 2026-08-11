@@ -15,7 +15,7 @@ int main(){
 	mqd_t mq;
 	pid_t pid;
 
-	struct mq_att attr;
+	struct mq_attr attr;
 
 	char buffer[100];
 	unsigned int priority;
@@ -29,7 +29,7 @@ int main(){
 	attr.mq_curmsgs = 0;
 
 	//create the posix message_queue
-	mq = mq_open(QUEUE_NAME,0_CREAT | 0_RDWR,066,&attr);
+	mq = mq_open(QUEUE_NAME,O_CREAT | O_RDWR,066,&attr);
 
 	if (mq ==(mqd_t)-1){
 		perror("mq_open");
@@ -38,7 +38,7 @@ int main(){
 
 	// create the child process//
 	
-	pid = fork(void);
+	pid = fork();
 	if (pid < 0){
 		perror("fork");
 		mq_close(mq);
