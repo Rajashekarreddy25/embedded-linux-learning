@@ -51,7 +51,7 @@ int main(){
 	fd1 = open("file1.txt",O_RDONLY);
 
 	if (fd1 == -1){
-		perror(file1.text);
+		perror("file1.text");
 		return 1;
 	}
 
@@ -60,7 +60,7 @@ int main(){
 
 	if (fd2 == -1)
 	{
-		perror("file.txt");
+		perror("file1.txt");
 		close(fd1);
 		return 1;
 	
@@ -83,7 +83,7 @@ int main(){
 		ret1 = read_word(fd1,word1,BUFFER_SIZE);
 		ret2 = read_word(fd2,word2,BUFFER_SIZE);
 
-		if ret1 == -1 || ret2 == -1)
+		if (ret1 == -1 || ret2 == -1)
 		{
 			perror("read");
 			break;
