@@ -2,9 +2,11 @@
 #include<string.h>
 
 int main(){
-	char str[] = "rajashekarreddy";
+	char str[20];
+       //	= "rajashekarreddy";
 	int res[26] = {0};
-
+	printf("enter a string:");
+	scanf("%s",str);
 	for(int i=0;str[i] != '\0';i++){
 		res[str[i]-'a']++;
 	}
