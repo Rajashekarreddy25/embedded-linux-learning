@@ -15,7 +15,7 @@ int main(){
 		continue;
 		}
 		else{
-		printf("%c is have repeated %d times\n",i+97,res[i]);
+		printf("freq of %c is  %d times\n",i+97,res[i]);
 		}
 	}
 
