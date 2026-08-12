@@ -9,7 +9,12 @@ int main(){
 		res[str[i]-'a']++;
 	}
 	for(int i=0;i<26;i++){
-		printf("%c is have repeated %d times:",65+'i',res[i]);
+		if (res[i] == 0){
+		continue;
+		}
+		else{
+		printf("%c is have repeated %d times:\n",65+'i',res[i]);
+		}
 	}
 
 	return 0;
