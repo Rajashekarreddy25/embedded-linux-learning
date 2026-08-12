@@ -13,7 +13,7 @@ int main(){
 		continue;
 		}
 		else{
-		printf("%c is have repeated %d times:\n",65+'i',res[i]);
+		printf("%c is have repeated %d times:\n",i+65,res[i]);
 		}
 	}
 
