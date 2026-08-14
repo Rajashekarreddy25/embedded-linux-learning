@@ -7,7 +7,7 @@ int main(){
 		{
 			if( i== 1)
 				break;
-
+			printf("i=%d j=%d\n",i,j);
 			printf("%s\n",str);
 		}
 	}
