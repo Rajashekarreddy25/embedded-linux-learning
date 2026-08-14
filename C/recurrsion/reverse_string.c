@@ -10,7 +10,10 @@ void reverse_str(char *str,int start,int end){
 
 }
 int main(){
-	char str[] = "rajashekar";
+	char str[20];
+	//= "rajashekar";
+	printf("enter a string: ");
+	scanf("%s",str);
 	int n = strlen(str)-1;
 	reverse_str(str,0,n);
 	printf("after the reverse: %s\n",str);
