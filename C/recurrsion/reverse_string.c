@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-char reverse_str(char *str,int start,int end){
+void reverse_str(char *str,int start,int end){
 	if (start == end )
 		return;
 	char temp = str[start];
