@@ -6,13 +6,13 @@ char reverse_str(char *str,int start,int end){
 	char temp = str[start];
 	str[start] = str[end];
 	str[end] = temp;
-	return reverse_str( &str,start+1,end-1);
+	return reverse_str( str,start+1,end-1);
 
 }
 int main(){
 	char str[] = "rajashekar";
 	int n = strlen(str)-1;
-	reverse_str(&str,0,n);
+	reverse_str(str,0,n);
 	printf("after the reverse: %s\n",str);
 
 	return 0;
