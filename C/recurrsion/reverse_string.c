@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 void reverse_str(char *str,int start,int end){
-	if (start == end )
+	if (!(start < end) )
 		return;
 	char temp = str[start];
 	str[start] = str[end];
