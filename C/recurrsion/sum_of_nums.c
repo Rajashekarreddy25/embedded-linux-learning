@@ -3,7 +3,8 @@
 void sumOfDigits(int num,int *sum){
 	if (num == 0)
 		return ;
-	return sumOfDigits(num/10,sum + num/10);
+	//*sum += num%10;
+	return sumOfDigits(num/10,sum + num%10);
 
 }
 int main(){
