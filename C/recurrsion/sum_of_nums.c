@@ -1,8 +1,9 @@
 #include<stdio.h>
 
-void sumOfDigits(int num,int *sum){
+int sumOfDigits(int num){
+		//,int *sum){
 	if (num == 0)
-		return ;
+		return 0;
 //	*sum += num%10;
 //	return sumOfDigits(num/10,sum);
 	return (num%10)+sumOfDigits(num/10);
@@ -13,9 +14,9 @@ int main(){
 	printf("enter a num:");
 	scanf("%d" , &num);
 
-	sumOfDigits(num,&sum);
+//	sumOfDigits(num,&sum);
 
-	printf("sum of digits :%d\n",sum);
+	printf("sum of digits :%d\n",sumOfDigits(num));
 
 	return 0;
 }
