@@ -3,9 +3,9 @@
 void sumOfDigits(int num,int *sum){
 	if (num == 0)
 		return ;
-	*sum += num%10;
-	return sumOfDigits(num/10,sum);
-
+//	*sum += num%10;
+//	return sumOfDigits(num/10,sum);
+	return (num%10)+sumOfDigits(num/10);
 }
 int main(){
 	int num;
