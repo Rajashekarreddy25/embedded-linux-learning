@@ -4,7 +4,7 @@ void reverse_num(int num,int *rev){
 	if (num  <= 0)
 		return ;
 	int d = num%10;
-	rev = (rev*10) +d;
+	*rev = ((*rev)*10) +d;
 	return reverse_num(num/10,&rev);
 }
 int main(){
