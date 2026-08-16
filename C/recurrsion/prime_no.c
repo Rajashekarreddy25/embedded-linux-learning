@@ -19,7 +19,7 @@ int main(){
 
 	scanf("%d",&num);
 
-	if(prime)
+	if(prime(num,2))
 		printf("%d is a prime ",num);
 	else
 		printf("%d is nat a prime",num);
