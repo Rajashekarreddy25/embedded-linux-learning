@@ -6,7 +6,7 @@ int  prime(int num,int divisor){
 		return 0;
 	if (divisor * divisor > num)
 		return 1;
-	if ( num % divisor)
+	if ( num % divisor == 0)
 		return 0;
 
 	return prime(num,divisor+1);
@@ -22,7 +22,7 @@ int main(){
 	if(prime(num,2))
 		printf("%d is a prime ",num);
 	else
-		printf("%d is nat a prime",num);
+		printf("%d is not a prime",num);
 
 
 	return 0;
