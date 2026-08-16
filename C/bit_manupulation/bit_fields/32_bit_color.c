@@ -4,5 +4,11 @@
 int main(){
 	uint8_t red = 234;
 	uint8_t blue = 29;
-	uint_t green
+	uint8_t green = 187;
+
+	uint32_t color = ((uint32_t)green) | ((uint32_t)blue(1<<8)) | ((uint32_t)red(1<<16)) ;
+	color |= ~(1<<24);
+
+	printf("color = 0X%08X\n",color);
+	return 0;
 
