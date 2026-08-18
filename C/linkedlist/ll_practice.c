@@ -17,17 +17,19 @@ struct node *createNode(int data){
 }
 
 
-void insert(struct node *head,int val){
+struct node *insert(struct node *head,int val){
 
 	struct node *temp = head;
 
 	if (head == NULL)
-		return ;
+		return createNode(val) ;
 	
 	while(temp->next != NULL){
 		temp = temp->next;
 	}
 	temp->next = createNode(val);
+
+	return createNode(val);
 }
 
 void traverse(struct node *head){
@@ -38,6 +40,7 @@ void traverse(struct node *head){
 		printf("%d ->",temp->data);
 		temp = temp->next;
 	}
+	printf("NULL\n");
 
 }
 
@@ -45,11 +48,11 @@ int main(){
 
 	struct node *head = NULL;
 
-	insert(head,10);
-	insert(head,20);
-	insert(head,30);
-	insert(head,40);
-	insert(head,50);
+	head = insert(head,10);
+	head = insert(head,20);
+	head = insert(head,30);
+	head = insert(head,40);
+	head = insert(head,50);
 
 	traverse(head);
 
