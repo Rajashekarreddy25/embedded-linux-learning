@@ -29,7 +29,7 @@ struct node *insert(struct node *head,int val){
 	}
 	temp->next = createNode(val);
 
-	return createNode(val);
+	return head;
 }
 
 void traverse(struct node *head){
