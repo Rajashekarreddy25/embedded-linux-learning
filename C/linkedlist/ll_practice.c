@@ -16,8 +16,22 @@ struct node *createNode(int data){
 	return newnode;
 }
 
-
 struct node *insertAtBegin(struct node *head,int val){
+
+	struct node *temp = head;
+
+	if(head == NULL)
+		return createNode(val);
+
+	struct node *newnode = createNode(val);
+	 
+	newnode->next = head;
+	head = newnode;
+	
+	return head;
+
+}
+struct node *insertAtEnd(struct node *head,int val){
 
 	struct node *temp = head;
 
@@ -83,14 +97,17 @@ int main(){
 
 	struct node *head = NULL;
 
-	head = insertAtBegin(head,10);
-	head = insertAtBegin(head,20);
-	head = insertAtBegin(head,30);
-	head = insertAtBegin(head,40);
-	head = insertAtBegin(head,50);
+	head = insertAtEnd(head,10);
+	head = insertAtEnd(head,20);
+	head = insertAtEnd(head,30);
+	head = insertAtEnd(head,40);
+	head = insertAtEnd(head,50);
 
 	Traverse(head);
 	head = insertAtPos(head , 60 ,6);
+	Traverse(head);
+	
+	head = insertAtBegin(head , 70);
 	Traverse(head);
 
 	free_list(head);
