@@ -41,7 +41,7 @@ struct node *insertAtPos(struct node *head,int val,int pos){
 	
 	int i = 0;
 	struct node *newnode = createNode(val);
-	while(i< pos-1){
+	while(i< pos){
 		temp =  temp->next; 
 		i++;
 	}
