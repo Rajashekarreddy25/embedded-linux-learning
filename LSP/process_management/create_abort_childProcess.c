@@ -22,12 +22,6 @@ int main(){
 
 		pid = fork();
 
- 	       if (pid < 0)
-       		 {
-            		perror("fork");
-           		 return 1;
-        	}
-
        		 if (pid == 0)
         	{
            		 // Child 2
