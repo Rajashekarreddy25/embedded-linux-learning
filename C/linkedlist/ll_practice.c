@@ -45,12 +45,13 @@ void Traverse(struct node *head){
 }
 void free_list(struct node *head){
 
-	struct node *temp = head ;
+	struct node *temp = NULL ;
 
-	while(temp != NULL){
+	while(head != NULL){
 
 		temp = head->next;
-		free(temp);
+		free(head);
+		head = temp;
 	}
 
 }
@@ -66,6 +67,8 @@ int main(){
 	head = insertAtBegin(head,50);
 
 	Traverse(head);
+
+	free_list(head);
 
 	return 0;
 }
