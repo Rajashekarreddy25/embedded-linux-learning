@@ -32,6 +32,27 @@ struct node *insertAtBegin(struct node *head,int val){
 	return head;
 }
 
+struct node *insertAtPos(struct node *head,int val,int pos){
+
+	struct node *temp = head;
+	 
+	if (head == NULL)
+		return createNode(val);
+	
+	int i = 0;
+	struct node *newnode = createNode(val);
+	while(i< pos-1){
+		temp =  temp->next; 
+		i++;
+	}
+	newnode->next = temp->next;
+	temp->next = newnode;
+	
+	return head;
+
+
+}
+
 void Traverse(struct node *head){
 
 	struct node *temp = head;
@@ -68,6 +89,8 @@ int main(){
 	head = insertAtBegin(head,40);
 	head = insertAtBegin(head,50);
 
+	Traverse(head);
+	head = insertAtPos(head , 60 ,3);
 	Traverse(head);
 
 	free_list(head);
