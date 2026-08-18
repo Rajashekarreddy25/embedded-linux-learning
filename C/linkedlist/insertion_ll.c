@@ -1,63 +1,74 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<unistd.h>
 
-struct node *head = NULL;
-
-struct node {
-	int data;
-	struct node *next;
+struct node{
+int data;
+struct node *next;
 };
 
-struct node *createnode(int val){
+struct node *head = NULL;
+struct node *createNode(int data){
 	struct node *newnode = (struct node*)malloc(sizeof(struct node));
-
-	newnode->data = val;
+	newnode->data = data;
 	newnode->next = NULL;
 
 	return newnode;
 }
 
+struct node *insertAtBegin(struct node *head,int val){
+
+	struct node *temp = head;
+
+	if(head == NULL)
+		return createNode(val);
+
+	struct node *newnode = createNode(val);
+	 
+	newnode->next = head;
+	head = newnode;
+	
+	return head;
+
+}
 struct node *insertAtEnd(struct node *head,int val){
 
-	if (head == NULL)
-		return createnode(val);
-	
 	struct node *temp = head;
-	 
+
+	if (head == NULL)
+		return createNode(val) ;
+	
 	while(temp->next != NULL){
 		temp = temp->next;
 	}
-	temp->next = createnode(val);
+	temp->next = createNode(val);
 
 	return head;
-	
 }
 
 struct node *insertAtPos(struct node *head,int val,int pos){
+
 	struct node *temp = head;
-	struct node *newnode = createnode(val);
-	if (pos == 0){
-		newnode->next = head;
-		return newnode;
-	}
-	 for(int i=0;i < pos-1 && temp != NULL;i++){
-		
-		 temp = temp->next;
-	 }
-
-	 if (temp == NULL){
-		 printf("the pos entered is invalid");
-		 free(newnode);
-		 return head;
-	 }
-
-	 newnode->next = temp->next;
-	 temp->next =newnode;
+	 
+	if (head == NULL)
+		return createNode(val);
 	
-	 return head;
+	int i = 1;
+	struct node *newnode = createNode(val);
+	while(i< pos-1){
+		temp =  temp->next; 
+		i++;
+	}
+	newnode->next = temp->next;
+	temp->next = newnode;
+	
+	return head;
+
 
 }
+
 void Traverse(struct node *head){
+
 	struct node *temp = head;
 
 	while(temp != NULL){
@@ -65,28 +76,41 @@ void Traverse(struct node *head){
 		temp = temp->next;
 	}
 	printf("NULL\n");
+
+}
+void free_list(struct node *head){
+
+	struct node *temp = NULL ;
+
+	while(head != NULL){
+
+		temp = head->next;
+		free(head);
+		head = temp;
+	}
+
+	printf("The list had been freed\n"); 
+
 }
 
 int main(){
-	int n;
-	printf("enter the size of list:\n");
-	scanf("%d",&n);
-	int arr[n];
-	printf("enter the ele in the list:\n");
-	for (int i=0;i<n;i++){
-		scanf("%d",&arr[i]);
-	}
-	for(int i=0;i<n;i++){
-		head = insertAtEnd(head,arr[i]);
-	}
-	printf("The elements in the list are :\n");
+
+	struct node *head = NULL;
+
+	head = insertAtEnd(head,10);
+	head = insertAtEnd(head,20);
+	head = insertAtEnd(head,30);
+	head = insertAtEnd(head,40);
+	head = insertAtEnd(head,50);
+
+	Traverse(head);
+	head = insertAtPos(head , 60 ,6);
 	Traverse(head);
 	
-	printf("enter the pos and value to insert the Node:\n");
-	int pos,value;
-	scanf("%d %d",&pos,&value);
-	head = insertAtPos(head,value,pos);
-
+	head = insertAtBegin(head , 70);
 	Traverse(head);
-}
 
+	free_list(head);
+
+	return 0;
+}
