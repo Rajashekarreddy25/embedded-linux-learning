@@ -19,7 +19,12 @@ int main(){
 		printf("the  parent pid is %d and child pid is %d:\n",getpid(),pid);
 		
 		waitpid(pid,&status,0);
-
+		
+		if (WIFSIGNALED(status))
+        	{
+           	 printf("Parent: Child 1 terminated by signal %d\n",
+                   WTERMSIG(status));
+       		 }
 		pid = fork();
 
        		 if (pid == 0)
