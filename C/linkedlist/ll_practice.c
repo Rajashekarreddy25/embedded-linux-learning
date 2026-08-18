@@ -39,9 +39,9 @@ struct node *insertAtPos(struct node *head,int val,int pos){
 	if (head == NULL)
 		return createNode(val);
 	
-	int i = 0;
+	int i = 1;
 	struct node *newnode = createNode(val);
-	while(i< pos){
+	while(i< pos-1){
 		temp =  temp->next; 
 		i++;
 	}
@@ -90,7 +90,7 @@ int main(){
 	head = insertAtBegin(head,50);
 
 	Traverse(head);
-	head = insertAtPos(head , 60 ,3);
+	head = insertAtPos(head , 60 ,6);
 	Traverse(head);
 
 	free_list(head);
