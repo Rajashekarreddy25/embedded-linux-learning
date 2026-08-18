@@ -54,6 +54,8 @@ void free_list(struct node *head){
 		head = temp;
 	}
 
+	printf("The list had been freed\n"); 
+
 }
 
 int main(){
