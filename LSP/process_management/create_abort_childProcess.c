@@ -20,11 +20,11 @@ int main(){
 		
 		waitpid(pid,&status,0);
 		
-	//	if (WIFSIGNALED(status))
-        //	{
-          // 	 printf("Parent: Child 1 terminated by signal %d\n",
-            //       WTERMSIG(status));
-       	//	 }
+		if (WIFSIGNALED(status))
+        	{
+           	 printf("Parent: Child 1 terminated by signal %d\n",
+        //           WTERMSIG(status));
+       		 }
 		pid = fork();
 
        		 if (pid == 0)
