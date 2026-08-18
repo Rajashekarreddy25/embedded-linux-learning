@@ -45,13 +45,13 @@ int main(){
 
 	struct node *head = NULL;
 
-	insert(&head,10);
-	insert(&head,20);
-	insert(&head,30);
-	insert(&head,40);
-	insert(&head,50);
+	insert(head,10);
+	insert(head,20);
+	insert(head,30);
+	insert(head,40);
+	insert(head,50);
 
-	traverse(&head);
+	traverse(head);
 
 	return 0;
 }
