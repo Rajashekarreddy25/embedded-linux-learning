@@ -19,11 +19,11 @@ struct node *createNode(int data){
 
 void insert(struct node *head,int val){
 
-	struct node *temp = NULL;
+	struct node *temp = head;
 
 	if (head == NULL)
 		return ;
-	temp = head;
+	
 	while(temp->next != NULL){
 		temp = temp->next;
 	}
