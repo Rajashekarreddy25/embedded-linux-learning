@@ -27,7 +27,7 @@ void insert(struct node *head,int val){
 	while(temp->next != NULL){
 		temp = temp->next;
 	}
-	temp->next = createnode(val);
+	temp->next = createNode(val);
 }
 
 void traverse(struct node *head){
