@@ -22,9 +22,9 @@ int main(){
 		
 		if (WIFSIGNALED(status))
         	{
-           	 printf("Parent: Child 1 terminated by signal %d\n", WTERMSIG(status));
-        //           WTERMSIG(status));
-       		 }
+           		 printf("Parent: Child 1 terminated by signal %d\n", WTERMSIG(status));
+       		
+	       	}
 		pid = fork();
 
        		 if (pid == 0)
