@@ -17,7 +17,7 @@ struct node *createNode(int data){
 }
 
 
-struct node *insert(struct node *head,int val){
+struct node *insertAtBegin(struct node *head,int val){
 
 	struct node *temp = head;
 
@@ -32,15 +32,26 @@ struct node *insert(struct node *head,int val){
 	return head;
 }
 
-void traverse(struct node *head){
+void Traverse(struct node *head){
 
 	struct node *temp = head;
 
 	while(temp != NULL){
-		printf("%d ->",temp->data);
+		printf("%d->",temp->data);
 		temp = temp->next;
 	}
 	printf("NULL\n");
+
+}
+void free_list(struct node *head){
+
+	struct node *temp = head ;
+
+	while(temp != NULL){
+
+		temp = head->next;
+		free(temp);
+	}
 
 }
 
@@ -48,13 +59,13 @@ int main(){
 
 	struct node *head = NULL;
 
-	head = insert(head,10);
-	head = insert(head,20);
-	head = insert(head,30);
-	head = insert(head,40);
-	head = insert(head,50);
+	head = insertAtBegin(head,10);
+	head = insertAtBegin(head,20);
+	head = insertAtBegin(head,30);
+	head = insertAtBegin(head,40);
+	head = insertAtBegin(head,50);
 
-	traverse(head);
+	Traverse(head);
 
 	return 0;
 }
