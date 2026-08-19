@@ -31,7 +31,7 @@ struct node *insertAtEnd(struct node *head,int val){
 	return head;
 }
 
-struct node *deleteAtEnd(struct node *head,int pos){
+struct node *deleteAtPos(struct node *head,int pos){
 	
 	struct node *temp = head;
 	struct node *del = NULL;
@@ -90,7 +90,7 @@ int main(){
 
 	 Traverse(head);
 	
-	 head = deleteAtEnd(head,4);
+	 head = deleteAtPos(head,1);
 	 Traverse(head);
 
 	 freeList(head);
