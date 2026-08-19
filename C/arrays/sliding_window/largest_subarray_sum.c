@@ -13,6 +13,16 @@ int main(){
 	}
 
 	for(int j=k;j<size;j++){
-		sum += arr[j];
-	       sum -= arr[j-k];
-       		if (	       
+		int sumR = sum;
+		sumR += arr[j];
+	       sumR -= arr[j-k];
+       		if (sumR > sum)
+	 		sum = sumR;
+	}
+
+	printf("The largest sum of subarray size %d is %d",k,sum);
+
+
+	return 0;
+}
+
