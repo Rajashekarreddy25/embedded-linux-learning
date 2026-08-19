@@ -59,8 +59,28 @@ struct node *deleteAtBegin(struct node *head){
 	return head;
 }
 
+struct node *deleteAtEnd(struct node *head){
 
+	struct node *temp = NULL;
+	struct node *del = NULL;
 
+	int n=0;
+	
+	while(temp != NULL){
+		temp = temp->next;
+		n++;
+	}
+
+	while(n--){
+		temp = temp->next;
+	}
+
+	del = temp->next;
+	del->next = NULL;
+	free(del);
+
+	return head;
+}
 
 void Traverse(struct node *head){
 
@@ -104,8 +124,11 @@ int main(){
 //	 head = deleteAtPos(head,1);
 //	 Traverse(head);
 	
-	 head = deleteAtBegin(head);
-	 Traverse(head);
+//	 head = deleteAtBegin(head);
+//	 Traverse(head);
+
+	head = deleteAtEnd(head);
+	Traverse(head);
 
 	 freeList(head);
 
