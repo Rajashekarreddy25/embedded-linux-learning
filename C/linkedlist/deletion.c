@@ -31,6 +31,25 @@ struct node *insertAtEnd(struct node *head,int val){
 	return head;
 }
 
+struct node *deleteAtEnd(struct node *head,int pos){
+	
+	struct node *temp = head;
+
+	int i = 0;
+
+	while(i<pos-1){
+
+		temp = temp->next;
+		i++;
+	}
+
+	temp->next = temp->next->next;
+	free(temp->next);
+
+	return head;
+}
+
+
 
 void Traverse(struct node *head){
 
@@ -69,6 +88,9 @@ int main(){
 	 head = insertAtEnd(head,40);
 	 head = insertAtEnd(head,50);
 
+	 Traverse(head);
+	
+	 head = deleteAtEnd(head,4);
 	 Traverse(head);
 
 	 freeList(head);
