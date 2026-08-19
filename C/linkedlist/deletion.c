@@ -126,10 +126,10 @@ int main(){
 	struct node *head = NULL;
 
        	head = insertAtEnd(head,10);
-//	 head = insertAtEnd(head,20);
-//	 head = insertAtEnd(head,30);
-//	 head = insertAtEnd(head,40);
-//	 head = insertAtEnd(head,50);
+	 head = insertAtEnd(head,20);
+	 head = insertAtEnd(head,30);
+	 head = insertAtEnd(head,40);
+	 head = insertAtEnd(head,50);
 
 	 Traverse(head);
 	
