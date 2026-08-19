@@ -33,8 +33,19 @@ struct node *insertAtEnd(struct node *head,int val){
 
 struct node *deleteAtPos(struct node *head,int pos){
 	
+	 if (head == NULL)
+		 return NULL;
+
 	struct node *temp = head;
 	struct node *del = NULL;
+
+	 if (pos == 1){
+                 del = head;
+		 head = del->next;
+		 free(del);
+                 return head;
+         }
+
 	int i = 1;
 
 	while(i<pos-1){
@@ -42,6 +53,7 @@ struct node *deleteAtPos(struct node *head,int pos){
 		temp = temp->next;
 		i++;
 	}
+
 	del = temp->next;
 	temp->next = del->next;
 	free(del);
@@ -50,6 +62,9 @@ struct node *deleteAtPos(struct node *head,int pos){
 }
 
 struct node *deleteAtBegin(struct node *head){
+	
+	if (head == NULL)
+		return NULL;
 
 	struct node *del = head;
 	
@@ -133,14 +148,14 @@ int main(){
 
 	 Traverse(head);
 	
-//	 head = deleteAtPos(head,1);
-//	 Traverse(head);
+	 head = deleteAtPos(head,1);
+	 Traverse(head);
 	
 //	 head = deleteAtBegin(head);
 //	 Traverse(head);
 
-	head = deleteAtEnd(head);
-	Traverse(head);
+//	head = deleteAtEnd(head);
+//	Traverse(head);
 
 	 freeList(head);
 
