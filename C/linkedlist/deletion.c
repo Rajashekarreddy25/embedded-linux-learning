@@ -35,7 +35,7 @@ struct node *deleteAtEnd(struct node *head,int pos){
 	
 	struct node *temp = head;
 
-	int i = 0;
+	int i = 1;
 
 	while(i<pos-1){
 
