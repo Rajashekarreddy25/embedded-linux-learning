@@ -8,11 +8,10 @@ int main()
         {7, 8, 9}
     };
 
-
         for (int col = 0; col < 3; col++)
 	{
 
-		if (row % 2 == 0){
+		if (col % 2 == 0){
 			for (int row = 0; row<3;row++){
 
            			 printf("%d ", mat[row][col]);
