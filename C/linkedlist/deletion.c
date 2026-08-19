@@ -61,8 +61,11 @@ struct node *deleteAtBegin(struct node *head){
 
 struct node *deleteAtEnd(struct node *head){
 
-	struct node *temp = NULL;
+	struct node *temp = head;
 	struct node *del = NULL;
+
+	if(head == NULL)
+		return NULL;
 
 	int n=0;
 	
@@ -71,7 +74,12 @@ struct node *deleteAtEnd(struct node *head){
 		n++;
 	}
 
-	int i =0;
+	if (n == 1){
+	       free(head);
+       		return NULL;
+	}		
+
+	int i =1;
 
 	while(i<n-1){
 		temp = temp->next;
