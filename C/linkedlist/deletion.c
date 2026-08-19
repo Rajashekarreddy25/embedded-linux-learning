@@ -8,7 +8,7 @@ struct node {
 };
 
 struct node *createnode(struct node *head,int val){
-	struct node *newnode = (struct node*)malloc(struct node);
+	struct node *newnode = (struct node*)malloc(sizeof(struct node));
 
 	newnode->data = val;
 	newnode->next = NULL;
@@ -19,7 +19,7 @@ struct node *createnode(struct node *head,int val){
 struct node *insertAtEnd(struct node *head,int val){
 	struct node *temp = head;
 
-	if(head == NULL){
+	if(head == NULL)
 		return createnode(head,val);
 
 	while(temp->next != NULL){
