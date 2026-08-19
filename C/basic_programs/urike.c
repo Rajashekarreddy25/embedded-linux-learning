@@ -29,11 +29,11 @@ int main(){
 
 */
 uint8_t mask = 0x0F;
-if (~mask == 0xF0) {
-   printf("Match");
-} else {
-   printf("No match");
-}
+	if ((uint8_t)~mask == 0xF0) {
+  		 printf("Match");
+	} else {
+  		 printf("No match");
+	}
 
 	return 0;
 }
