@@ -12,7 +12,7 @@ int main()
 	{
 
 		if (col % 2 == 0){
-			for (int row = 0; row<3;row++){
+			for (int row = 0; row < 3;row++){
 
            			 printf("%d ", mat[row][col]);
 			}
