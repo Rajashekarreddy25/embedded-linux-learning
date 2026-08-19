@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdlib.h>
+//#include<stdlib.h>
 //#include<unistd.h>
 
 struct node {
@@ -34,7 +34,6 @@ struct node *insert(struct node *head,int val){
 
 struct node *reverse(struct node *head){
 
-
 	struct node *prev = NULL;
 	struct node *curr = head ;
 	struct node *next;
@@ -46,10 +45,8 @@ struct node *reverse(struct node *head){
 		prev = curr;
 		curr = next;
 	}
-
 	return prev;
 }
-
 
 void Traverse(struct node *head){
 
