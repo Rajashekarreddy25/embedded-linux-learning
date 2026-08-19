@@ -70,9 +70,9 @@ struct node *deleteAtEnd(struct node *head){
 	int n=0;
 	
 	while(temp != NULL){
-		n++;
-		temp = temp->next;
 	//	n++;
+		temp = temp->next;
+		n++;
 	}
 
 	if (n == 1){
@@ -88,7 +88,7 @@ struct node *deleteAtEnd(struct node *head){
 	}
 
 	del = temp->next;
-	del->next = NULL;
+	temp->next = NULL;
 	free(del);
 
 	return head;
@@ -126,10 +126,10 @@ int main(){
 	struct node *head = NULL;
 
        	head = insertAtEnd(head,10);
-	 head = insertAtEnd(head,20);
-	 head = insertAtEnd(head,30);
-	 head = insertAtEnd(head,40);
-	 head = insertAtEnd(head,50);
+//	 head = insertAtEnd(head,20);
+//	 head = insertAtEnd(head,30);
+//	 head = insertAtEnd(head,40);
+//	 head = insertAtEnd(head,50);
 
 	 Traverse(head);
 	
