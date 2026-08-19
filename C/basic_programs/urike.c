@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<stdint.h>
+/*
 int main(){
 	char str[] = "rajashekar";
 
@@ -10,6 +12,19 @@ int main(){
 			printf("i=%d j=%d\n",i,j);
 			printf("%s\n",str);
 		}
+	}
+
+	return 0;
+}
+*/
+int main(){
+
+	uint8_t status = 0X0E;
+	if (status & 1 << 3) {
+		printf("Set");
+	} else 
+	{
+		printf("Clear");
 	}
 
 	return 0;
