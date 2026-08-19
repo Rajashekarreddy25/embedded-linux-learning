@@ -49,6 +49,17 @@ struct node *deleteAtPos(struct node *head,int pos){
 	return head;
 }
 
+struct node *deleteAtBegin(struct node *head){
+
+	struct node *del = head;
+	
+	head = del->next;
+	free(del);
+
+	return head;
+}
+
+
 
 
 void Traverse(struct node *head){
@@ -91,6 +102,9 @@ int main(){
 	 Traverse(head);
 	
 	 head = deleteAtPos(head,1);
+	 Traverse(head);
+	
+	 head = deleteAtBegin(head);
 	 Traverse(head);
 
 	 freeList(head);
