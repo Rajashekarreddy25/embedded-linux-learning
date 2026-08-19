@@ -92,7 +92,7 @@ int main(){
 
 	Traverse(head);
 	
-	reverse(head);
+	head = reverse(head);
 	Traverse(head);
 
 	freeList(head);
