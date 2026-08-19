@@ -18,7 +18,7 @@ int main(){
 }
 */
 int main(){
-
+/*
 	uint8_t status = 0X0E;
 	if (status & 1 << 3) {
 		printf("Set");
@@ -26,6 +26,14 @@ int main(){
 	{
 		printf("Clear");
 	}
+
+*/
+uint8_t mask = 0x0F;
+if (~mask == 0xF0) {
+   printf("Match");
+} else {
+   printf("No match");
+}
 
 	return 0;
 }
