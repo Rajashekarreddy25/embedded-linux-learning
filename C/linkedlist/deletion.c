@@ -71,9 +71,11 @@ struct node *deleteAtEnd(struct node *head){
 		n++;
 	}
 
-	while(n){
+	int i =0;
+
+	while(i<n-1){
 		temp = temp->next;
-		n--;
+		i++;
 	}
 
 	del = temp->next;
