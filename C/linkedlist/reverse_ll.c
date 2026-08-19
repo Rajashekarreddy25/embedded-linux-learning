@@ -1,6 +1,5 @@
 #include<stdio.h>
-//#include<stdlib.h>
-//#include<unistd.h>
+#include<stdlib.h>
 
 struct node {
 	int data ;
