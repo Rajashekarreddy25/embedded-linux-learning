@@ -32,6 +32,25 @@ struct node *insert(struct node *head,int val){
 	return head;
 }
 
+struct node *reverse(struct node *head){
+
+
+	struct node *prev = NULL;
+	struct node *curr = head ;
+	struct node *next;
+
+	while(curr != NULL){
+		
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
+	}
+
+	return prev;
+}
+
+
 void Traverse(struct node *head){
 
 	struct node *temp = head;
@@ -71,6 +90,9 @@ int main(){
 	head = insert(head,40);
 
 
+	Traverse(head);
+	
+	reverse(head);
 	Traverse(head);
 
 	freeList(head);
