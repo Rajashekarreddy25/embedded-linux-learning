@@ -101,8 +101,8 @@ int main(){
 
 	 Traverse(head);
 	
-	 head = deleteAtPos(head,1);
-	 Traverse(head);
+//	 head = deleteAtPos(head,1);
+//	 Traverse(head);
 	
 	 head = deleteAtBegin(head);
 	 Traverse(head);
