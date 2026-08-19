@@ -34,7 +34,7 @@ struct node *insertAtEnd(struct node *head,int val){
 struct node *deleteAtEnd(struct node *head,int pos){
 	
 	struct node *temp = head;
-
+	struct node *del = NULL;
 	int i = 1;
 
 	while(i<pos-1){
@@ -42,9 +42,9 @@ struct node *deleteAtEnd(struct node *head,int pos){
 		temp = temp->next;
 		i++;
 	}
-
-	temp->next = temp->next->next;
-	free(temp->next);
+	del = temp->next;
+	temp->next = del->next;
+	free(del);
 
 	return head;
 }
