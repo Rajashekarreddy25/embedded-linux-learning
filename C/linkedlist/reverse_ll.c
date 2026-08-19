@@ -9,7 +9,7 @@ struct node {
 
 struct node *createNode(struct node *head,int val){
 
-	sturct node *newnode = (struct node*)malloc(sizeof(struct node));
+	struct node *newnode = (struct node*)malloc(sizeof(struct node));
 
 	newnode->data = val;
 	newnode->next = NULL;
