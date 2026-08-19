@@ -20,7 +20,7 @@ struct node *createNode(struct node *head,int val){
 struct node *insert(struct node *head,int val){
 
 	if(head == NULL)
-		return newnode;
+		return createNode(head,val);
 	struct node *temp = head;
 
 	while(temp->next != NULL){
