@@ -10,12 +10,25 @@ int main(){
 		col = 0;
 		for(int j=0;i<3;j++){
 			printf("%d ",mat[row][col]);
-			col++;
-			if(col == 2)
+			row++;
+			if(row == 2)
 				break;
-			col--;
 		}
-		row++;
+		col++;
+		for(int j=0;j<3;j++){
+			printf("%d ",mat[row][col]);
+			row--;
+			if (row == 0)
+				break;
+		}
+		col++;
+		for(int j=0;i<3;j++){
+                        printf("%d ",mat[row][col]);
+                        row++;
+                        if(row == 2)
+                                break;
+                }
+               
 	}
 
 	return 0;
