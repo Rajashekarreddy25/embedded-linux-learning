@@ -11,18 +11,14 @@ int main(){
 	for (int i=0;i<k;i++){
 		sum+=arr[i];
 	}
- 	printf("subarray values %d ",sum);
+ 	printf("sum of subarray values of size :%d is  %d ",k,sum);
 	for(int j=k;j<size;j++){
-//		int sumR = sum;
 		sum += arr[j];
 	        sum -= arr[j-k];
-  //     		if (sumR > sum)
-//	 		sum = sumR;
 	
 			printf("%d ",sum);
 	
 	}
-//	printf("The largest sum of subarray size %d is %d",k,sum);
 
 
 	return 0;
