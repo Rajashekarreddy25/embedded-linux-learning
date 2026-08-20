@@ -40,7 +40,7 @@ uint8_t mask = 0x0F;
 }
 */
 
-
+#include<inttypes.h>
 #include<stdint.h>
 #define TOGGLE_BIT(reg, n)  ((reg) ^= (1 << (n)), (reg) & (1 << (n)))
 int main(){
