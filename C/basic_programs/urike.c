@@ -48,6 +48,6 @@ uint8_t ctrl = 0x00;
 uint8_t pos = 3;
 TOGGLE_BIT(ctrl, pos++);
 
-printf("%PRIu8 \n",ctrl);
+printf("The value is %" PRIu8 "\n",ctrl);
 
 }
