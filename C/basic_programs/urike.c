@@ -17,7 +17,7 @@ int main(){
 	return 0;
 }
 */
-int main(){
+//int main(){
 /*
 	uint8_t status = 0X0E;
 	if (status & 1 << 3) {
@@ -28,6 +28,7 @@ int main(){
 	}
 
 */
+/*
 uint8_t mask = 0x0F;
 	if ((uint8_t)~mask == 0xF0) {
   		 printf("Match");
@@ -36,4 +37,17 @@ uint8_t mask = 0x0F;
 	}
 
 	return 0;
+}
+*/
+
+
+#include<stdint.h>
+#define TOGGLE_BIT(reg, n)  ((reg) ^= (1 << (n)), (reg) & (1 << (n)))
+int main(){
+uint8_t ctrl = 0x00;
+uint8_t pos = 3;
+TOGGLE_BIT(ctrl, pos++);
+
+printf("%PRIu8 \n",ctrl);
+
 }
