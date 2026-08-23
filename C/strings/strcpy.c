@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-char strcmpr(char *str1,char str2){
+char strcmpr(char *str1,char *str2){
 	int i=0;
 	int j=0;
 	while(str1[i] != '\0' && str2[j] != '\0'){
@@ -11,7 +11,7 @@ char strcmpr(char *str1,char str2){
 		}
 		i++;
 		j++;
-	
+	}	
 	return 0;
 	}
 
@@ -19,7 +19,7 @@ char strcmpr(char *str1,char str2){
 int main(){
 
 	char str1[] = "rajashekar";
-	char str2[] = "reddyreddy";
+	char str2[] = "rajashekar";
 
 	int res = strcmpr(str1,str2);
 
