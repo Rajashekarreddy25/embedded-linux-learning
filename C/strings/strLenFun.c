@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-char strlen(char *str){
+char strlength(char *str){
 
 	int i = 0;
 	 
@@ -15,7 +15,7 @@ int main(){
 	
 	char str[] = "rajashekar";
 
-	printf("Len of the string is :%d", strlen(str));
+	printf("Len of the string is :%d", strlength(str));
 
 	return 0;
 }
