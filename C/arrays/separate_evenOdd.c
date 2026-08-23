@@ -8,21 +8,19 @@ int main(){
 	for(int i = 0;i<n;i++){
 		if (arr[i] %2 == 0){
 			int j = i+1;
-			while(j<n){
-				if(arr[j] != 0){
+			while(j<n && arr[j] %2 == 0){
+				j++;
+			}
+			if(j<n){
 
 					int temp = arr[i];
 					arr[i] = arr[j];
 					arr[j] = temp;
-					break;
-				}
-				else{
-					j++;
-				}
+				
 			}
 		}
 
-	}
+	}	
 
 
 
