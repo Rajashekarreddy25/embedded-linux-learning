@@ -5,7 +5,7 @@ char *strcpyy(char *src,char *dest){
 	while(( *dest++ = *src++)){ 
 	}	
 	return savedDest;
-	}
+}
 
 
 int main(){
