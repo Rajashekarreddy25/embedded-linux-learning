@@ -2,7 +2,7 @@
 
 char *strcpyy(char *src,char *dest){
 	char *savedDest = dest;
-	while(( *src++ = *dest++)){ 
+	while(( *dest++ = *src++)){ 
 	}	
 	return savedDest;
 	}
