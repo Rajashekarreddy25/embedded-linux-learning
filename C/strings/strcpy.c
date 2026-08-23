@@ -20,10 +20,10 @@ int main(){
 
 //	int res =
 	       
-//		strcmpr(str1,str2);
+	strcpyy(str1,str2);
 
 //	if (res == 0)
-		printf("%s",strcpyy(str1,str2));
+		printf("%s",str2);
 //	else
 //		printf("both are not equal");
 
