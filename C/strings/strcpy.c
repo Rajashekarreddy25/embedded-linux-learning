@@ -18,8 +18,8 @@ char strcmpr(char *str1,char str2){
 
 int main(){
 
-	char str1 = "rajashekar";
-	char str2 = "reddyreddy";
+	char str1[] = "rajashekar";
+	char str2[] = "reddyreddy";
 
 	int res = strcmpr(str1,str2);
 
