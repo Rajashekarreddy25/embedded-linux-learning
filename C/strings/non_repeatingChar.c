@@ -17,7 +17,7 @@ char nonRepeatingChar(char *str){
 		if(!found)
 		//	printf("The first non repeating char is :%c",str[i]);
 			return str[i];
-
+	}
 	return '$';
 }
 
@@ -25,7 +25,7 @@ int main(){
 
 	char str[] = "rajashekarreddy";
 
-	printf("The first non repeating char is :%c ",nonRepeatingChar(str);
+	printf("The first non repeating char is :%c ",nonRepeatingChar(str));
 
 	return 0;
 }
