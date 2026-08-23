@@ -9,7 +9,7 @@ int main(){
 		if (arr[i] %2 == 0){
 			int j = i+1;
 			while(j<n){
-				if(arr[i] != 0){
+				if(arr[j] != 0){
 
 					int temp = arr[i];
 					arr[i] = arr[j];
