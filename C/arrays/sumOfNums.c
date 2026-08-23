@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-int sumOfArray(int *arr){
+int sumOfArray(int *arr,int n){
 
 	int size = sizeof(arr)/sizeof(arr[0]);
 	int sum=0;
-	for(int i=0;i<size;i++){
+	for(int i=0;i<n;i++){
 		sum+=arr[i];
 	}
 	return sum;
@@ -19,7 +19,7 @@ int main(){
 	for(int i=0;i<n;i++){
 		scanf("%d",&arr[i]);
 	}
-	printf("The sum of given arr ele is :%d",sumOfArray(arr));
+	printf("The sum of given arr ele is :%d",sumOfArray(arr,n));
 
 	return 0;
 }
