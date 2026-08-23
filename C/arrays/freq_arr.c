@@ -24,7 +24,7 @@ int main(){
 				continue;
 		
 			if (arr[i] == arr[j]){
-				freq[i++];
+				freq[i]++;
 				freq[j] = 0;
 			}
 		}
