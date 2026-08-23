@@ -5,9 +5,6 @@ int main(){
 	printf("enter the size of arr:");
 	scanf("%d",&n);
 	int arr[n];
-	       //	= {1,2,3,4,5,2,4,3,1,10};
-	
-	//int n = sizeof(arr)/sizeof(arr[0]);
 	int freq[n];
 	printf("enter  the ele in the array:");
 	for(int i = 0;i<n;i++){
