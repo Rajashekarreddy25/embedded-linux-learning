@@ -28,9 +28,9 @@ int main(){
 	int end = n-1;
 	while(start<end){
 
-		while(start<end && arr[start] != 0)
+		while(start<end && arr[start]%2 != 0)
 			start++;
-		while(start < end && arr[end] == 0)
+		while(start < end && arr[end]%2 == 0)
 			end--;
 		if(start < end){
 			int temp = arr[start];
