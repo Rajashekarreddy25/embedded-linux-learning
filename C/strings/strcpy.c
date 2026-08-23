@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-char strcmpr(char *src,char *dest){
-	char *savedDest = str2;
-	while(( *src++ = *dest++)) 
+char strcpyy(char *src,char *dest){
+	char *savedDest = dest;
+	while(( *src++ = *dest++)){ 
 		//(*str1 == *str2) ){
 
 	//	str1++;
@@ -23,7 +23,7 @@ int main(){
 //		strcmpr(str1,str2);
 
 //	if (res == 0)
-		printf("%s",strcpy(str1,str2));
+		printf("%s",strcpyy(str1,str2));
 //	else
 //		printf("both are not equal");
 
