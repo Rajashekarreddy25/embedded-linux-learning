@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-char strcpyy(char *src,char *dest){
+char *strcpyy(char *src,char *dest){
 	char *savedDest = dest;
 	while(( *src++ = *dest++)){ 
 		//(*str1 == *str2) ){
