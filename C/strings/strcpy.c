@@ -7,7 +7,7 @@ char strcmpr(char *str1,char str2){
 
 		if (str1[i] != str2[j]){
 
-			return str1[i] - str[j];
+			return str1[i] - str2[j];
 		}
 		i++;
 		j++;
