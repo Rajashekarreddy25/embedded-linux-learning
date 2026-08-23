@@ -2,7 +2,7 @@
 
 int sumOfArray(int *arr,int n){
 
-	int size = sizeof(arr)/sizeof(arr[0]);
+//	int size = sizeof(arr)/sizeof(arr[0]);
 	int sum=0;
 	for(int i=0;i<n;i++){
 		sum+=arr[i];
