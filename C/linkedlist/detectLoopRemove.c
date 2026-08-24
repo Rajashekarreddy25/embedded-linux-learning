@@ -156,7 +156,7 @@ int main(){
 
 //	detectLoopRemove(head);
 
-	if (detectLoop)
+	if (detectLoop(head))
 		printf("loop detected\n");
 	else
 		printf("no loop detected\n");
