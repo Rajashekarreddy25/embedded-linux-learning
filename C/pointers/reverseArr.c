@@ -6,12 +6,13 @@ void reverse(int *arr,int size){
        	endp = endp+size;	
 	printf("%d\n " ,*endp);
 	while(i<size/2){
-		i++;
+		
 		int temp = *arr;
 		*arr = *endp;
 		*endp = temp;
 		arr++;
 		endp--;
+		i++;
 	}
 }
 
