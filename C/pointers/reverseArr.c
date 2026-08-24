@@ -1,9 +1,9 @@
 #include<stdio.h>
-int reverse(int *arr,int size){
+void reverse(int *arr,int size){
 	
 	int i=0;
 	int *endp = arr;
-       	endp = end+size;	
+       	endp = endp+size;	
 /*
 	while(i<size){
 		i++;
@@ -18,6 +18,7 @@ int reverse(int *arr,int size){
 		arr++;
 		endp--;
 	}
+}
 
 
 int main(){
@@ -26,7 +27,7 @@ int main(){
 	
 	int n = sizeof(arr)/sizeof(arr[0]);
 
-	reverse(&arr,n);
+	reverse(arr,n);
 	
 	for(int i=0;i<n;i++){
 
