@@ -2,8 +2,8 @@
 void reverse(int *arr,int size){
 	
 	int i=0;
-	int *endp = arr;
-       	endp = endp+size;	
+	int *endp = arr+size;
+       //	endp = endp+size;	
 	printf("%d\n " ,*endp);
 	while(i<size/2){
 		
