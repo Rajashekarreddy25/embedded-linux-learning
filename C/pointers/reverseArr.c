@@ -9,7 +9,7 @@ void reverse(int *arr,int size){
 		i++;
 		int temp = *arr;
 		*arr = *endp;
-		*endp = *arr;
+		*endp = temp;
 		arr++;
 		endp--;
 	}
