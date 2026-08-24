@@ -4,12 +4,7 @@ void reverse(int *arr,int size){
 	int i=0;
 	int *endp = arr;
        	endp = endp+size;	
-/*
-	while(i<size){
-		i++;
-		endp++;
-	}
-	*/
+	printf("%d\n " ,*endp);
 	while(i<size/2){
 		i++;
 		int temp = *arr;
