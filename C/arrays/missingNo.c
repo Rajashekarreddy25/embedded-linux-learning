@@ -6,7 +6,7 @@ int main(){
 
 	int n = sizeof(arr)/sizeof(arr[0]);
 
-	int sum = (n*(n+1))/2;
+	int sum = ((n+1)*(n+2))/2;
 	printf("sum of n nums is %d\n",sum);
 
 	int arrSum = 0;
