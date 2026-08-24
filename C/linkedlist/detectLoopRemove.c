@@ -80,6 +80,31 @@ struct node *detectLoopRemove(struct node *head){
 	return head;
 }
 
+int detectLoop(struct node *head){
+
+	struct node *temp = head;
+	struct node *visited[100];
+
+	int count = 0;
+
+	while(temp != NULL){
+		
+		for (int i=0; i<count;i++){
+			if (visited[i] == temp )
+				return 1;
+		}
+
+		visited[count] = temp;
+		count++;
+
+		temp = temp->next;
+	}
+
+	return 0;
+}
+
+
+
 int freeList(struct node *head){
 
 	struct node *temp = head;
@@ -115,7 +140,7 @@ int main(){
 
 	Traverse (head);
 
-/*	struct node *temp = head;
+	struct node *temp = head;
 
 	struct node *loopnode = NULL;
 
@@ -128,9 +153,13 @@ int main(){
 	}
 
 	temp->next = loopnode;
-*/	
-	detectLoopRemove(head);
 
+//	detectLoopRemove(head);
+
+	if (detectLoop)
+		printf("loop detected\n");
+	else
+		printf("no loop detected\n");
 	Traverse(head);
 
 	freeList(head);
