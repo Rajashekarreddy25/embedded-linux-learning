@@ -44,7 +44,41 @@ void Traverse(struct node *head){
 	printf("NULL\n");
 }
 
+struct node *detectLoopRemove(struct node *head){
 
+
+	struct node *slow = head;
+	struct node *fast = head;
+
+	while(fast != NULL && fast->next != NULL){
+
+		slow = slow->next;
+		fast = fast->next->next;
+
+		if (slow == fast){
+			
+			printf("loop detected\n");
+			slow = head;
+			while(slow != fast){
+
+				slow = slow->next;
+				fast = fast->next;
+
+			}
+
+			while(fast->next != slow){
+
+				fast = fast->next;
+			}
+
+
+			fast -> next = NULL;
+			break;
+		}
+	}
+
+	return head;
+}
 
 int freeList(struct node *head){
 
@@ -80,6 +114,24 @@ int main(){
 
 
 	Traverse (head);
+
+	struct node *temp = head;
+
+	struct node *loopnode = NULL;
+
+	while(temp->next != NULL){
+
+		if (temp->data == 30)
+			loopnode = temp;
+
+		temp = temp->next;
+	}
+
+	temp->next = loopnode;
+	
+	detectLoopRemove(head);
+
+	Traverse(head);
 
 	freeList(head);
 
