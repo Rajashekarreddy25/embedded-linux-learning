@@ -1,9 +1,13 @@
 #include<stdio.h>
 
-int reverse(int *arr,int start,int end){
+void reverse(int *arr,int start,int end){
 
 	if (!(start < end))
-		return 0;
+		return;
+	
+	arr[start] = arr[start] ^ arr[end];
+	arr[end] = arr[start] ^ arr[end];
+	arr[start] = arr[start] ^ arr[end];
 
 	return reverse(arr,start+1,end-1);
 }
