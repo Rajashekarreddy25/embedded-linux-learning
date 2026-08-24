@@ -160,7 +160,7 @@ int main(){
 		printf("loop detected\n");
 	else
 		printf("no loop detected\n");
-	Traverse(head);
+//	Traverse(head);
 
 	freeList(head);
 
