@@ -7,14 +7,14 @@ int main(){
 	
 	uint32_t  res =0;
 
-	printf("%u ",reg);
+	printf("%b \n",reg);
 
 	for (int i=0;i<32;i++){
 		uint32_t bit = reg&1;
 		res = (res<<1)|bit;
 		reg = reg>>1;
 	}
-	printf("the no after reverse is :%u ",res);
+	printf("the no after reverse is :%b ",res);
 
 	return 0;
 }
