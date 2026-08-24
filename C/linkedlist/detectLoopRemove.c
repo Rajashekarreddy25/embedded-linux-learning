@@ -115,7 +115,7 @@ int main(){
 
 	Traverse (head);
 
-	struct node *temp = head;
+/*	struct node *temp = head;
 
 	struct node *loopnode = NULL;
 
@@ -128,7 +128,7 @@ int main(){
 	}
 
 	temp->next = loopnode;
-	
+*/	
 	detectLoopRemove(head);
 
 	Traverse(head);
