@@ -6,7 +6,7 @@ int main(){
 	printf("enter a no:");
 	scanf("%d",&n);
 
-	if (n&1)
+	if (n&(n-1))
 		printf("%d not is the power of 2",n);
 	else
 		printf("%d is a power of 2",n);
