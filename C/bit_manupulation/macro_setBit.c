@@ -8,7 +8,7 @@ int main(){
 	printf("enter a value");
 	scanf("%d",&n);
 
-	if (SET(n,3))
+	if (SET(n,4))
 		printf("set");
 	else
 		printf("NOT set");
