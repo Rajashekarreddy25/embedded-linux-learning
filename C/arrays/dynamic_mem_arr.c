@@ -9,13 +9,13 @@ int main(){
 
 	int *ptr= (int*)malloc(10*sizeof(int));
 	
-	printf("enter the %d values into the arr",n);
-	for (int i=0;i<10;i++){
+	printf("enter the %d values into the arr: ",n);
+	for (int i=0;i<n;i++){
 
 		scanf("%d",(ptr+i));
 	}
 
-	for (int i=0;i<10;i++){
+	for (int i=0;i<n;i++){
 		printf("%d",*(ptr+i));
 	}
 
