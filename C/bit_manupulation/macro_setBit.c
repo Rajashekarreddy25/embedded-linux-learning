@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-#define SET(n,pos) ((n>>pos)&1)
+#define SET(n,pos) (n& (1<<pos))
 
 int main(){
 
