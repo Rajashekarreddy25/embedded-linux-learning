@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-#define SET(n,pos) (n&(1>>pos))
+#define SET(n,pos) ((n>>pos)&1)
 
 int main(){
 
@@ -8,7 +8,7 @@ int main(){
 	printf("enter a value");
 	scanf("%d",&n);
 
-	if (SET(n,4))
+	if (SET(n,3))
 		printf("set");
 	else
 		printf("NOT set");
