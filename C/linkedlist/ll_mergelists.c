@@ -43,7 +43,7 @@ struct node *merge(struct node *head1,struct node *head2,struct node *head3){
 		if(temp1->data < temp2->data){
 
 			head3 = insert(head3,temp1->data);
-			temp1 = temp->next;
+			temp1 = temp1->next;
 
 		}
 		else{
