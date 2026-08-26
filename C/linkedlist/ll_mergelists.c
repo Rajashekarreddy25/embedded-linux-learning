@@ -102,7 +102,7 @@ int main(){
 	for (int i=0;i<n1;i++){
 		scanf("%d",&arr1[i]);
 	}
-
+	printf("enter the values in list2:\n");
 	for (int i=0;i<n2;i++){
 		scanf("%d",&arr2[n2]);
 	}
