@@ -44,6 +44,7 @@ void middleNode(struct node *head){
 
 	}
 */
+
 	// To find the second middle node in even no.of nodes
 	
 	while(fast != NULL && fast->next != NULL){
