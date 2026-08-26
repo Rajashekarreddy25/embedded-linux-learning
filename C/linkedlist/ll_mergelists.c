@@ -55,7 +55,6 @@ struct node *merge(struct node *head1,struct node *head2,struct node *head3){
 		      
 		       	head3 = insert(head3,temp1->data);
 			temp1 = temp1->next;	
-		//	temp3 = temp3->next;
 		}
 
 		while(temp2 != NULL){
