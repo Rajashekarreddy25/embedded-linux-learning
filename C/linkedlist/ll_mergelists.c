@@ -40,7 +40,7 @@ void Traverse (struct node *head){
 
 		printf("%d->",temp->data);
 
-		temp = temp->data;
+		temp = temp->next;
 	}
 
 	printf("NULL\n");
