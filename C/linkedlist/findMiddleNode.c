@@ -31,7 +31,21 @@ struct node *insertAtEnd(struct node *head,int val){
 
 	return  head;
 }
+void middleNode(struct node *head){
 
+	struct node *slow = head;
+	struct node *fast = head;
+
+	while (fast != NULL){
+
+		slow = slow->next;
+		fast = fast->next->next;
+
+	}
+
+	printf("The middle node is : %d",slow->data);
+
+}
 void Traverse(struct node *head){
 
 	struct node *temp = head;
@@ -59,7 +73,8 @@ int main(){
 	head = insertAtEnd(head,50);
 
 	Traverse(head);
-
+	
+	middleNode(head);
 
 	return 0;
 }
