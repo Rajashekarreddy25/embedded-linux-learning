@@ -35,12 +35,21 @@ void middleNode(struct node *head){
 
 	struct node *slow = head;
 	struct node *fast = head;
-
+// TO find the first middle node when even no.of nodes
+/*
 	while (fast->next != NULL && fast->next->next != NULL){
 
 		slow = slow->next;
 		fast = fast->next->next;
 
+	}
+*/
+	// To find the second middle node in even no.of nodes
+	
+	while(fast != NULL && fast->next != NULL){
+
+		slow = slow->next;
+		fast = fast->next->next;
 	}
 
 	printf("The middle node is : %d\n",slow->data);
