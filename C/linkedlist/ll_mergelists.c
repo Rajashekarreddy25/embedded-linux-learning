@@ -36,35 +36,37 @@ struct node *merge(struct node *head1,struct node *head2,struct node *head3){
 
 	struct node *temp2 = head2;
 
-	struct node *temp3 = head3;
+//	struct node *temp3 = head3;
 
 	while( temp1 != NULL && temp2 != NULL){
 
 		if(temp1->data < temp2->data){
 
-			temp3->data = temp1->data;
+			head3 = insert(head3,temp1->data);
 			temp1 = temp->next;
 
 		}
 		else{
-			temp3->data = temp2->data;
+			head3 = insert(head3,temp2->data);
 			temp2 = temp2->next;
 		}
 
 		while(temp1 != NULL){
 		      
-		       	temp3->data = temp1->data;
-			
-			temp3 = temp3->next;
+		       	head3 = insert(head3,temp1->data);
+			temp1 = temp1->next;	
+		//	temp3 = temp3->next;
 		}
 
 		while(temp2 != NULL){
 			
-			temp3 ->data = temp2->data;
+			head3 = insert(head3,temp2->data);
 			
-			temp3 = temp3->next;
+			temp2 = temp2->next;
 		}
+	
 	}
+	return head3;
 }	
 
 
@@ -88,8 +90,31 @@ void Traverse (struct node *head){
 
 int main(){
 
-	struct node *head = NULL;
+	struct node *head1 = NULL;
+	struct node *head2 = NULL;
+	struct node *head3 = NULL;
+	
+	int n1,n2;
+	printf("enter the sizes of the list1 and list2:");
+        scanf("%d %d",&n1,&n2);
+	int arr1[n1],arr2[n2];	
+	printf("enter the values in the list1:\n");
+	for (int i=0;i<n1;i++){
+		scanf("%d",&arr1[i]);
+	}
 
+	for (int i=0;i<n2;i++){
+		scanf("%d",&arr2[n2]);
+	}
+
+	for(int i=0;i<n1;i++){
+		head1= insert(head1,arr1[i]);
+	}
+	for(int i=0;i<n2;i++){
+		head2 = insert(head2,arr2[i]);
+	}
+
+	/*
 	head = insert(head,50);
 
 	head = insert(head,40);
@@ -99,9 +124,14 @@ int main(){
 	head = insert(head,20);
 
 	head = insert(head,10);
+*/
 
+	Traverse(head1);
+	Traverse(head2);
 
-	Traverse(head);
+	head3 = merge(head1,head2,head3);
+
+	Traverse(head3);
 
 
 	return 0;
