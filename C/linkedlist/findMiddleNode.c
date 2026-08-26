@@ -43,7 +43,7 @@ void middleNode(struct node *head){
 
 	}
 
-	printf("The middle node is : %d",slow->data);
+	printf("The middle node is : %d\n",slow->data);
 
 }
 void Traverse(struct node *head){
@@ -70,7 +70,7 @@ int main(){
 
 	head = insertAtEnd(head,40);
 
-	head = insertAtEnd(head,50);
+//	head = insertAtEnd(head,50);
 
 	Traverse(head);
 	
