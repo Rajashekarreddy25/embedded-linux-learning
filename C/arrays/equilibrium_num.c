@@ -2,10 +2,10 @@
 
 int main(){
 
-	int arr[] = {2,3,5,1,4};
+	int arr[] = {2,3,6,1,4};
 	
 	int n = sizeof(arr)/sizeof(arr[0]);
-
+	int found = 0;
 	for (int i =0;i<n;i++){
 
 		int left_arr_sum = 0;
@@ -20,14 +20,19 @@ int main(){
 		}
 
 		if (left_arr_sum == right_arr_sum){
+			found = 1;
 			printf("The equilibrium ele: %d ",arr[i]);
 		}
-
+         /*
 		else{
 			printf("No such ele:");
 		}
-
+*/
 	}
+	if (!found){
+		printf("no such ele:");
+	}
+
 
 	return 0;
 }
