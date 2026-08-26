@@ -2,7 +2,7 @@
 
 int main(){
 
-	char str[] = "the quick brown fox jumps over the lay dog";
+	char str[] = "the quick brown fox jumps over the lazy dog";
 
 	int freq[26] ={0};
 	int ispanagram = 1;
