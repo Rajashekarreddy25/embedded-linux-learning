@@ -36,7 +36,7 @@ void middleNode(struct node *head){
 	struct node *slow = head;
 	struct node *fast = head;
 
-	while (fast != NULL){
+	while (fast->next != NULL){
 
 		slow = slow->next;
 		fast = fast->next->next;
