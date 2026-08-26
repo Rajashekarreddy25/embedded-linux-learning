@@ -79,7 +79,7 @@ int main(){
 
 	head = insertAtEnd(head,40);
 
-//	head = insertAtEnd(head,50);
+	head = insertAtEnd(head,50);
 
 	Traverse(head);
 	
@@ -88,5 +88,6 @@ int main(){
 	return 0;
 }
 	
+
 
 
