@@ -53,16 +53,16 @@ struct node *reverse (struct node *head){
     return prev;
 }
 
-struct node *recursive_Traverse_forward(struct node *head){
+void recursive_Traverse_forward(struct node *head){
     
     struct node *temp = head;
     if (temp == NULL){
         printf("NULL\n");
-        return NULL;
+        return ;
     }
         
     printf("%d->",temp->data);
-    return recursive_Traverse_forward(temp->next);
+    recursive_Traverse_forward(temp->next);
 }
 
 void recursive_Traverse_backward(struct node *head){
@@ -122,7 +122,7 @@ int main()
     
    // Traverse(head);
     //head = reverse(head);
-   head = recursive_Traverse_forward(head);
+   recursive_Traverse_forward(head);
    recursive_Traverse_backward(head);
     printf("NULL\n");
     //Traverse(head);
