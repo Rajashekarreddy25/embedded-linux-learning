@@ -4,7 +4,7 @@ int binarySearch(int *arr,int low,int high,int key){
 
 	while(low<high){
 
-		int mid = (low+(high-low))/2;
+		int mid = low+(high-low)/2;
 
 		if( key == arr[mid]){
 			return mid;
@@ -31,7 +31,7 @@ int main(){
 
 	int n = sizeof(arr)/sizeof(arr[0]);
 
-	int key = 8;
+	int key = 18;
 
 	int res = binarySearch(arr,0,n-1,key);
 
