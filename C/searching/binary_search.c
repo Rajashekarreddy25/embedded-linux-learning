@@ -1,7 +1,47 @@
 #include<stdio.h>
 
-int binarySearch(*arr,int start,int end,int mid,int k){
+int binarySearch(int *arr,int low,int high,int key){
 
-	for(int i=0;i<=mid;i++){
-		if (arr[i] == k){
+	while(low<high){
 
+		int mid = (low+high)/2;
+
+		if( key == arr[mid]){
+			return mid;
+		}
+		else if ( key < arr[mid] ){
+
+			high = mid -1;
+
+		}
+
+		else{
+			low = mid + 1;
+		}
+
+	}
+
+
+	return -1;
+}
+
+int main(){
+
+	int arr[] = {1,2,3,4,5,6,7,8,9};
+
+	int n = sizeof(arr)/sizeof(arr[0]);
+
+	int key = 8;
+
+	int res = binarySearch(arr,0,n-1,key);
+
+
+	if (res < 0)
+		printf("ele not found in the arr:");
+       	else
+		printf("The ele %d  found at index %d ",key,res);
+
+
+	return 0;
+
+}
