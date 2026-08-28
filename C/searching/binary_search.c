@@ -30,14 +30,14 @@ int main(){
 	int arr[] = {1,2,3,4,5,6,7,8,9};
 
 	int n = sizeof(arr)/sizeof(arr[0]);
-
+	
 	int key = 18;
 
 	int res = binarySearch(arr,0,n-1,key);
 
 
 	if (res < 0)
-		printf("ele not found in the arr:");
+		printf("The ele not found in the array");
        	else
 		printf("The ele %d  found at index %d ",key,res);
 
