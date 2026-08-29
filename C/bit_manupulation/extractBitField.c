@@ -8,7 +8,7 @@ int main(){
 	uint32_t reg;
 	printf("enter a no:");
 	scanf("%u",&reg);
-	printf("entered no in binary is : %b\n",n);
+	printf("entered no in binary is : %b\n",reg);
 	
 	printf("enter the pos and len:");
 	int n,pos;
