@@ -26,7 +26,7 @@ int main(){
 		for(int j =0;j<3;j++){
 
 			int start = 0;
-			int end = 2;
+			int end = n-1;
 
 			while(start < end){
 
