@@ -1,7 +1,5 @@
 #include<stdio.h>
-
 #include<stdint.h>
-
 
 int main(){
 
@@ -12,7 +10,7 @@ int main(){
 	
 	printf("enter the pos and len:");
 	int n,pos;
-	scanf("%d %d",pos,n);	
+	scanf("%d %d",&pos,&n);	
 	// To extract the n bit from postion pos 
 	uint32_t val = (reg >> pos) & ((1U << n)-1);
 
