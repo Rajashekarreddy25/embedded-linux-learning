@@ -5,11 +5,14 @@
 
 int main(){
 
-	uint32_t n;
+	uint32_t reg;
 	printf("enter a no:");
-	scanf("%u",&n);
+	scanf("%u",&reg);
 	printf("entered no in binary is : %b\n",n);
 	
+	printf("enter the pos and len:");
+	int n,pos;
+	scanf("%d %d",pos,n);	
 	// To extract the n bit from postion pos 
 	uint32_t val = (n>>pos) & 0xf;
 
