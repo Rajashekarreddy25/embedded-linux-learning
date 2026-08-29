@@ -21,9 +21,9 @@ int main(){
 			{7,8,9}};
 
 	*/
-	for (int i = 0;i<3;i++){
+	for (int i = 0;i<n;i++){
 
-		for(int j =0;j<3;j++){
+		for(int j =0;j<n;j++){
 
 			int start = 0;
 			int end = n-1;
@@ -44,9 +44,9 @@ int main(){
 
 	}
 	printf("The matrix after reversing rows:\n");
-	for (int i=0;i<3;i++){
+	for (int i=0;i<n;i++){
 
-		for (int j=0;j<3;j++){
+		for (int j=0;j<n;j++){
 
 			printf("%d ",arr[i][j]);
 		}
