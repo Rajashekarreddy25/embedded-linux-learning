@@ -8,7 +8,7 @@ int main(){
 	scanf("%d",&n);
 
 	int arr[n][n] ;
-	printf("enter the ele in the matrix:");
+	printf("enter the ele in the matrix:\n");
 	for (int i = 0;i<n;i++){
 		for (int j = 0;j<n;j++){
 
@@ -43,7 +43,7 @@ int main(){
 		}
 
 	}
-
+	printf("The matrix after reversing rows:\n");
 	for (int i=0;i<3;i++){
 
 		for (int j=0;j<3;j++){
