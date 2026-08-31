@@ -12,7 +12,7 @@ int main(){
 
 	struct node s;
 
-	int size = (char *)(&s+1) - (char *)(&s);
+	int size = (int *)(&s+1) - (int *)(&s);
 	printf("%d ",size);
 	return 0;
 }
