@@ -11,9 +11,11 @@ int main(){
 	int *fptr(int,int);
 
 
-	int res = fptr(2,5);
+	fptr = add;
 
-	printf("%d",res);
+
+
+	printf("%d",fptr(2,2));
 
 	return 0;
 }
