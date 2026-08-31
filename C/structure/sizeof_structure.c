@@ -14,7 +14,7 @@ int main(){
 
 	int size = (int*)&s[0] - (int*)&s[1];
 	int size1 = sizeof(struct node);
-	printf("%d ",size1);
+	printf("%d ",size * -4);
 
 	return 0;
 }
