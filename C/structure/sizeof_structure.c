@@ -13,8 +13,8 @@ int main(){
 	struct node s[2];
 
 	int size = (int*)&s[0] - (int*)&s[1];
-
-	printf("%d ",size);
+	int size1 = sizeof(struct node);
+	printf("%d ",size1);
 
 	return 0;
 }
