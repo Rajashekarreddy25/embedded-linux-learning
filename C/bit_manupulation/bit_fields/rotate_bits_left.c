@@ -15,7 +15,7 @@ int main(){
 
 	scanf("%uu %d",&reg,&k);
 
-	printf("The binary of reg is:\n %b",reg);
+	printf("The binary of reg is:%b",reg);
 
 	printf("\nThe revesed binary is %b",reverse_left(reg,k));
 
