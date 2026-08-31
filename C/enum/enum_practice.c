@@ -9,7 +9,10 @@ int main(){
 
 	today = tues;
 	
+	printf("%d ",today);
 	printf("%u ",today);
+	printf("%p ",&today);
+
 
 	return 0;
 }
