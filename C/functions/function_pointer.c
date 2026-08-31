@@ -8,7 +8,7 @@ int add(int a,int b){
 
 int main(){
 
-	int *fptr(int,int);
+	int (*fptr)(int,int);
 
 
 	fptr = add;
