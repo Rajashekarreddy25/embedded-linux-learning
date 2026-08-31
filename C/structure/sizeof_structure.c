@@ -14,6 +14,6 @@ int main(){
 
 	int size = (int*)&s[1] - (int*)&s[0];
 	printf("%d ",size);
-
+	printf("%ld ",sizeof(struct node));
 	return 0;
 }
