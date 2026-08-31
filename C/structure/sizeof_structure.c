@@ -10,10 +10,9 @@ struct node{
 
 int main(){
 
-	struct node s[2];
+	struct node s;
 
-	int size = (int*)&s[1] - (int*)&s[0];
+	int size = (char *)(&s+1) - (char *)(&s);
 	printf("%d ",size);
-	printf("%ld ",sizeof(struct node));
 	return 0;
 }
