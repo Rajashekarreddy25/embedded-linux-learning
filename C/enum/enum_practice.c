@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-enum week  {sun = 25,mon,tues,wed,thus,friday,sat};
+enum week  {sun = 1001,mon,tues,wed,thus,friday,sat};
 
 int main(){
 
