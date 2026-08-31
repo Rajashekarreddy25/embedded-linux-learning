@@ -3,6 +3,9 @@
 #include<stdint.h>
 
 uint32_t reverse_left(uint32_t reg,int k){
+	k %= 32;
+	if (k == 0)
+		return reg;
 
 	return (reg<<k) | (reg>>(32-k));
 }
