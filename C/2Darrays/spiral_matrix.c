@@ -14,7 +14,7 @@ int main(){
 	int bottom = n-1;
 	int right = n-1;
 
-	while((top <= bottom) && (left <= right)) {
+	while((top < bottom) && (left < right)) {
 		
 		for(int col = 0;col<n;col++){
 
