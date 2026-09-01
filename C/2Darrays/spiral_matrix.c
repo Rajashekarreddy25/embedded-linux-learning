@@ -2,48 +2,49 @@
 
 int main(){
 
-	int arr[4][4] = {{1,2,3,4},
-			{5,6,7,8},
-			{9,10,11,12},
-			{13,14,15,16}};
 
-	int n = 4;
+        int arr[4][4] = {{1,2,3,4},
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,15,16}};
 
-	int top = 0;
-	int left = 0;
-	int bottom = n-1;
-	int right = n-1;
+        int n = 4;
 
-	while((top < bottom) && (left < right)) {
-		
-		for(int col = 0;col<n;col++){
+        int top = 0;
+        int left = 0;
+        int bottom = n-1;
+        int right = n-1;
 
-			printf("%d ",arr[top][col]);
+        while((top <= bottom) && (left <= right)) {
 
-		}
-		top++;
-		for(int row = top; row < n;row++){
+                for(int col = left; col<right; col++){
 
-			printf("%d ",arr[row][right]);
-		}
+                        printf("%d ",arr[top][col]);
 
-		right--;
+                }
+                top++;
+                for(int row = top; row < bottom ;row++){
 
-		for (int col = right;col >= left; col--){
+                        printf("%d ",arr[row][right]);
+                }
 
-			printf("%d " ,arr[bottom][col]);
-		}
+                right--;
 
-		bottom--;
-		
-		for(int row = bottom ;row >= top; row++){
+                for (int col = right;col >= left; col--){
 
-			printf("%d ",arr[row][left]);
-		}
-		left++;
-	}
+                        printf("%d " ,arr[bottom][col]);
+                }
 
-return 0;
+                bottom--;
+
+                for(int row = bottom ;row >= top; row--){
+
+                        printf("%d ",arr[row][left]);
+                }
+                left++;
+        }
+
+	return 0;
 }
 
 
