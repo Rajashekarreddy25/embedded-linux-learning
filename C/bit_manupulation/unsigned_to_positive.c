@@ -2,11 +2,11 @@
 
 int main(){
 
-	int x  = -32;
+	int x  = 6;
 		
 	x = (~x) - 1;
 
-	printf("%d ",x);
+	printf("%d ",x+2);
 
 	return 0;
 }
