@@ -2,7 +2,7 @@
 
 int main(){
 
-	unsigned int x  = -32;
+	int x  = -32;
 		
 	x = (~x) - 1;
 
