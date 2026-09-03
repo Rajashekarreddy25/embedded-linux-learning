@@ -2,10 +2,10 @@
 #include<stdint.h>
 int main(){
 
-	int32_t  x  = -6;
+	int x  = -6;
 		
 //	x = (~x) - 1;
-	x &= ~(INT32_C(1) << 31);
+	x &= ~(1U << 31);
 	printf("%d ",x);
 
 	return 0;
