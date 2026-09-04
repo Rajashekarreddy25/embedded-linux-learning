@@ -8,7 +8,7 @@ int main(){
 		      {0,3,2,0,0},
 		      {0,2,6,0,0}};
 
-	int res[][3];
+	int res[][3] = {0};
 	int row = 0;
 	int col = 1;
 	int val = 2;
@@ -28,15 +28,11 @@ int main(){
 			}
 
 		}
-	//	m++;
 	}
 
 	for (int i = 0;i < m;i++){
-	//	for(int j = 0;j<3;j++){
 
 			printf ("%d   %d   %d\n ",res[i][row],res[i][col],res[i][val]);
-	//	}
-	//	printf("\n");
 	}
 	return 0;
 }
