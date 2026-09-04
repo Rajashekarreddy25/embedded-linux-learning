@@ -8,7 +8,7 @@ int main(){
 		      {0,3,2,0,0},
 		      {0,2,6,0,0}};
 
-	int res [10][3] ;
+	int res[][3];
 	int row = 0;
 	int col = 1;
 	int val = 2;
