@@ -15,15 +15,12 @@ int main(){
 			
 			if(mat[i][j] != 0){
 
-				printf(" %d   %d  %d ",i,j,mat[i][j]);
+				printf(" %d    %d   %d\n ",i,j,mat[i][j]);
 			}
 
-
 		}
-		printf("\n");
+//		printf("\n");
 	}
-
-
 	return 0;
 }
 
