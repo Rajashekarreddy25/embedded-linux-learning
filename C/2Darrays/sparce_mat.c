@@ -31,12 +31,12 @@ int main(){
 	//	m++;
 	}
 
-	for (int i = 0;i<5;i++){
-		for(int j = 0;j<3;j++){
+	for (int i = 0;i < m;i++){
+	//	for(int j = 0;j<3;j++){
 
-			printf ("%d     ",res[i][j]);
-		}
-		printf("\n");
+			printf ("%d   %d   %d\n ",res[i][row],res[i][col],res[i][val]);
+	//	}
+	//	printf("\n");
 	}
 	return 0;
 }
