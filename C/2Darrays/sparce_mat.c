@@ -8,7 +8,6 @@ int main(){
 		      {0,3,2,0,0},
 		      {0,2,6,0,0}};
 
-//	int res[][3] ;
 	printf(" Row   coloum value\n ");
 	for (int i =0 ;i<5;i++){
 		for(int j = 0;j<5;j++){
