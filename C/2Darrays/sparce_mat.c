@@ -12,25 +12,24 @@ int main(){
 	int row = 0;
 	int col = 1;
 	int val = 2;
+
+	int m = 0;
 	printf(" Row   coloum value\n ");
-	for (int i =0 ;i<5;i++){
-		int m = 0;
+	for (int i =0;i<5;i++){
+//		int m = 0;
 		for(int j = 0;j<5;j++){
-			
+	
 			if(mat[i][j] != 0){
 
-			//	printf(" %d    %d   %d\n ",i,j,mat[i][j]);
-			res[m][row] = i;
-		        res[m][col] = j;
-			res[m][val] = mat[i][j];	
+				res[m][row] = i;
+		        	res[m][col] = j;
+				res[m][val] = mat[i][j];	
+				m++;
 			}
 
 		}
-		m++;
-//		printf("\n");
+	//	m++;
 	}
-
-
 
 	for (int i = 0;i<5;i++){
 		for(int j = 0;j<3;j++){
