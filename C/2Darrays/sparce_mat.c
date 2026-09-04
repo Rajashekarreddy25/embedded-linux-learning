@@ -32,7 +32,7 @@ int main(){
 
 	for (int i = 0;i < m;i++){
 
-			printf ("%d   %d   %d\n ",res[i][row],res[i][col],res[i][val]);
+			printf ("%d       %d       %d\n ",res[i][row],res[i][col],res[i][val]);
 	}
 	return 0;
 }
