@@ -13,7 +13,7 @@ int res = -1;
         int minval = 1000;
         for(int k = 0 ; k<=i;k++){
             if (nums[k] > maxval ){
-                maxval = nums[i];
+                maxval = nums[k];
             }
         }
         for(int m = i; m < n;m++){
