@@ -6,9 +6,10 @@ int top = -1;
 
 int pop(){
 
-	if ( top == -1)
+	if ( top == -1){
 		printf("The stack is under flown");
-
+		return -1;
+	}
 	int val = stack[top--];
 	 return val;
 }
@@ -24,9 +25,10 @@ void push(){
 }
 
 int peek(){
-	if ( top == -1)
+	if ( top == -1){
 		printf("the stack is empty");
-
+		return -1;
+	}
 	int res = stack[top];
 
 	return res;
@@ -47,7 +49,7 @@ int main(){
 
 		else if (str[i] == '*' ){
 
-			printf("popped : %d ",pop() );
+			printf("popped : %d \n",pop() );
 
 		}
 
