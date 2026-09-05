@@ -34,7 +34,7 @@ int peek(){
 
 int main(){
 
-	char str1[] = "st**ri*ng";
+	char str[] = "st**ri*ng";
 
 
 	for(int i=0; str[i] != '\0'; i++){
@@ -47,7 +47,7 @@ int main(){
 
 		else if (str[i] == '*' ){
 
-			printf("popped : %d "pop() );
+			printf("popped : %d ",pop() );
 
 		}
 
