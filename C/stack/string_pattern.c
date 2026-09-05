@@ -1,7 +1,7 @@
 #include<stdio.h>
 #define SIZE 5
 
-int stack[SIZE];
+char stack[SIZE];
 int top = -1;
 
 int pop(){
@@ -15,12 +15,12 @@ int pop(){
 }
 
 
-void push(){
+void push(char val){
 
 	if ( top == SIZE -1 )
 		printf("The is overflown :");
 
-	stack[++top];
+	stack[++top] = val;
 
 }
 
