@@ -16,10 +16,20 @@ int pop(){
 
 void push(){
 
-	if ( top == 
+	if ( top == SIZE -1 )
+		printf("The is overflown :");
 
+	stack[++top];
 
+}
 
+int peek(){
+	if ( top == -1)
+		printf("the stack is empty");
+
+	int res = stack[top];
+
+	return res;
 }
 
 int main(){
@@ -41,5 +51,16 @@ int main(){
 
 		}
 
+	
+	}
+		printf("The resultant string is :");
 
+		for(int i = 0;i <= top;i++){
+
+			printf("%c",stack[i]);
+
+		}
+
+		return 0;
+}
 
