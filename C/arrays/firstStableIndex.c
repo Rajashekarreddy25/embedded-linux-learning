@@ -2,7 +2,7 @@
 int main(){
 
 
-int nums[] = {3,2,1}
+int nums[] = {3,2,1};
 	// {5,0,1,4};
 int n = sizeof(nums)/sizeof(nums[0]);
 
