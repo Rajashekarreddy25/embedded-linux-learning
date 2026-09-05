@@ -49,7 +49,7 @@ int main(){
 
 		else if (str[i] == '*' ){
 
-			printf("popped : %d \n",pop() );
+			printf("popped : %c\n",pop() );
 
 		}
 
