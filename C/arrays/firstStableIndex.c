@@ -5,7 +5,7 @@ int main(){
 int nums[] = {5,0,1,4};
 int n = sizeof(nums)/sizeof(nums[0]);
 
-int  k = 3;
+int  z = 3;
 int res = -1;
 
     for(int i = 0;i<n;i++){
@@ -23,7 +23,7 @@ int res = -1;
             }
         }
 
-        if ((maxval - minval) <= k){
+        if ((maxval - minval) <= z){
 
             res = i;
 	    break;
