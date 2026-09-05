@@ -2,11 +2,12 @@
 int main(){
 
 
-int nums[] = {3,2,1};
+int nums[] = {0}; 
+	//{3,2,1};
 	// {5,0,1,4};
 int n = sizeof(nums)/sizeof(nums[0]);
 
-int  z = 1;
+int  z = 0;
 int res = -1;
 
     for(int i = 0;i<n;i++){
