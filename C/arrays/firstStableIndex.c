@@ -74,9 +74,11 @@ int main(){
             for(int i = 0;i<numsSize;i++){
                 if ((long long)prefixMax[i] - suffixMin[i] <= k){
 
-                    return i;
+                    printf("%d \n", i);
+		    break;
                 }
             }
+	printf("NO such ele in the array:");
 
-        return -1;
+        return 0;
 }
