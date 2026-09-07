@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<limits.h>
+#include<stdlib.h>
 
+/************************brute sol **********************/
+/*
 int main(){
 
 	int nums[] = {0}; 
@@ -32,6 +35,47 @@ int main(){
 	    break;
         }
     }
-    printf("First stable Index is : %d ",res);
-return 0;
+   	 printf("First stable Index is : %d ",res);
+	return 0;
+}
+
+*/
+
+/****************  optimal sol ******************/
+int main(){
+
+	  int  nums[] = {5,0,1,4};
+	
+	  int numsSize = sizeof(nums)/sizeof(nums[0]);
+
+	   int *prefixMax = (int *)malloc(numsSize * (sizeof(int)));
+           int *suffixMin = (int *)malloc(numsSize * (sizeof(int)));
+
+            prefixMax[0] = nums[0];
+            suffixMin[numsSize - 1] = nums[numsSize-1];
+
+            for(int z = 1 ; z < numsSize; z++){
+                if (nums[z] > prefixMax[z-1] ){
+                    prefixMax[z] = nums[z];
+                }
+                else
+                    prefixMax[z] = prefixMax[z-1];
+            }
+            for(int m = numsSize-2; m >= 0 ;m--){
+
+                if (nums[m] < suffixMin[m+1]){
+                    suffixMin[m] = nums[m];
+                }
+                else
+                    suffixMin[m] = suffixMin[m+1];
+            }
+
+            for(int i = 0;i<numsSize;i++){
+                if ((long long)prefixMax[i] - suffixMin[i] <= k){
+
+                    return i;
+                }
+            }
+
+        return -1;
 }
