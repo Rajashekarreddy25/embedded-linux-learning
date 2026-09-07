@@ -45,7 +45,8 @@ int main(){
 int main(){
 
 	  int  nums[] = {5,0,1,4};
-	
+	  int k = 3;
+
 	  int numsSize = sizeof(nums)/sizeof(nums[0]);
 
 	   int *prefixMax = (int *)malloc(numsSize * (sizeof(int)));
