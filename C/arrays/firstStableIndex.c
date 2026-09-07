@@ -26,7 +26,7 @@ int main(){
             }
         }
 
-        if ((maxval - minval) <= z){
+        if ((long long)maxval - minval <= z){
 
             res = i;
 	    break;
