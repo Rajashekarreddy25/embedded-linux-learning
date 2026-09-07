@@ -77,8 +77,10 @@ int main(){
                     printf("%d \n", i);
 		    break;
                 }
+		//else 
+		//	printf("NO such ele in the arr:");
             }
-	printf("NO such ele in the array:");
+//	printf("NO such ele in the array:");
 
         return 0;
 }
